@@ -1,7 +1,19 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: mart
- * Date: 15/05/18
- * Time: 11:44
- */
+
+define('PAGENAME', "Home");
+
+require 'config.php';
+session_start();
+$_SESSION['language'] = 'et';
+DatabaseHandler::connect();
+
+$translator = new Translator($_SESSION['language']);
+
+
+
+$page = 'Tere';
+
+
+PageDrawer::drawPage($page);
+
+DatabaseHandler::close();

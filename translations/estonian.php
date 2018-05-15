@@ -1,7 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: mart
- * Date: 15/05/18
- * Time: 11:45
- */
+
+$language['et']['title'] = '{pagename} | Discussr';
+$language['et']['search'] = 'Otsi...';
+$language['et']['unexpectederror'] = 'Tekkis mingi viga.';
+$language['et']['incorrectpass'] = 'Vale parool!';
+$language['et']['loginsuccess'] = 'Sisselogimine õnnestus!';
