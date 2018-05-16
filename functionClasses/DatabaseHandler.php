@@ -2,25 +2,23 @@
 
 class DatabaseHandler
 {
-	private static $user_list = array();
-
-
-	static $connection;
+	public static $connection;
 
 	static function connect()
 	{
-		require 'config.php';
+		require SITE_LOCATION . '/config.php';
 		self::$connection = new mysqli($mysql['hostname'], $mysql['username'], $mysql['password'], $mysql['database']);
 		if(self::$connection->connect_error)
 		{
-			die(self::$connection->connect_error);
+			//die(self::$connection->connect_error);
+			die("Unexpected error occured.");
 		}
 
-		$query = self::$connection->query('SELECT * FROM `' . $mysql['dbprefix'] . 'users`');
-		while($row = $query->fetch_assoc())
+		if(isset($_SESSION['sqlid']))
 		{
-			$user = new User($row);
-			array_push($user_list, $user);
+			global $current_user;
+			$sqlid = (int) $_SESSION['sqlid'];
+			$current_user = self::getUserBySQLID($sqlid);
 		}
 	}
 
@@ -36,21 +34,31 @@ class DatabaseHandler
 
 	static function getAllUsers()
 	{
-		return self::$user_list;
+		$user_list = array();
+		$query = self::$connection->query('SELECT * FROM `' . $mysql['dbprefix'] . 'users`');
+		while($row = $query->fetch_assoc())
+		{
+			$user = new User($row);
+			array_push($user_list, $user);
+		}
+		return $user_list;
 	}
 
 	static function getUserBySQLID($sqlid)
 	{
-		foreach(self::$user_list as $item)
+		$sqlid = self::escape_string($sqlid);
+		$query = self::$connection->query('SELECT * FROM `' . $mysql['dbprefix'] . 'users` WHERE `sqlid` = \'' . $sqlid . '\' LIMIT 1');
+		if($query->num_rows > 0)
 		{
-			if(is_a($item, "User"))
-			{
-				if($item->getSQLID() == $sqlid)
-				{
-					return $item;
-				}
-			}
+			$user = new User($query->fetch_assoc());
+			return $user;
 		}
-		return null;
+		else return null;
+	}
+
+	static function updateLanguage($user, $language)
+	{
+		$sqlid = (int) $user->getSQLID();
+		self::$connection->query('UPDATE `' . $mysql['dbprefix'] . 'users` SET `sitelanguage` = \'' . $language . '\' WHERE `sqlid` = \'' . $sqlid . '\'');
 	}
 }

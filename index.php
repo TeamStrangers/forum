@@ -1,10 +1,11 @@
 <?php
 
+session_start();
+
 define('PAGENAME', "Home");
 
 require 'config.php';
-session_start();
-$_SESSION['language'] = 'et';
+
 DatabaseHandler::connect();
 
 $translator = new Translator($_SESSION['language']);

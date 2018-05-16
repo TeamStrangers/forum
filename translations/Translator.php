@@ -14,16 +14,10 @@ class Translator
 		return $this->language;
 	}
 
-	function getLanguageName()
-	{
-		if($this->language == 'en') return 'English';
-		else if($this->language == 'et') return 'Estonian';
-	}
-
 	function getString($strName, $variableContents = null)
 	{
-		require 'english.php';
-		require 'estonian.php';
+		require SITE_LOCATION . '/translations/english.php';
+		require SITE_LOCATION . '/translations/estonian.php';
 		if(is_null($variableContents))
 		{
 			return $language[$this->language][$strName];

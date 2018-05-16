@@ -1,4 +1,7 @@
 <?php
 
+session_start();
 session_reset();
-session_stop();
+session_destroy();
+
+header("Location: ../index.php");

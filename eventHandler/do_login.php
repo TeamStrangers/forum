@@ -1,6 +1,6 @@
 <?php
 
-require 'config.php';
+require '../config.php';
 session_start();
 DatabaseHandler::connect();
 
@@ -26,21 +26,21 @@ if($values_set == true)
 			{
 				$_SESSION['sqlid'] = $user->getSQLID();
 				$_SESSION['language'] = $user->getSiteLanguage();
-				header("Location: index.php?msg[0]=great&msg[1]=" . $translator->getString('loginsuccess'));
+				header("Location: " . SITE_URL . "/index.php?msg[0]=success&msg[1]=" . $translator->getString('loginsuccess'));
 			}
 			else
 			{
-				header("Location: index.php?msg[0]=error&msg[1]=" . $translator->getString('incorrectpass'));
+				header("Location: " . SITE_URL . "/index.php?msg[0]=error&msg[1]=" . $translator->getString('incorrectpass'));
 			}
 			break;
 		}
 	}
 	if($user_found == false)
 	{
-		header("Location: index.php?msg[0]=error&msg[1]=" . $translator->getString('incorrectpass'));
+		header("Location: " . SITE_URL . "/index.php?msg[0]=error&msg[1]=" . $translator->getString('incorrectpass'));
 	}
 }
 
 DatabaseHandler::close();
 
-header("Location: index.php?msg[0]=error&msg[1]=" . $translator->getString('unexpectederror'));
+header("Location: " . SITE_URL . "/index.php?msg[0]=error&msg[1]=" . $translator->getString('unexpectederror'));
