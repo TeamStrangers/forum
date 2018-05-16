@@ -4,16 +4,17 @@ class PageDrawer
 {
 	static function getStyles()
 	{
-		$styles = '<link href="' . CDN_URL . '/menu.css" type="text/css" rel="stylesheet" />';
-		$styles .= '<link href="' . CDN_URL . '/style.css" type="text/css" rel="stylesheet" />';
-		$styles .= '<link href="' . CDN_URL . '/alertbox.css" type="text/css" rel="stylesheet" />';
+		$styles = '<link href="' . CDN_URL . '/stylesheets/menu.css" type="text/css" rel="stylesheet" />';
+		$styles .= '<link href="' . CDN_URL . '/stylesheets/style.css" type="text/css" rel="stylesheet" />';
+		$styles .= '<link href="' . CDN_URL . '/stylesheets/alertbox.css" type="text/css" rel="stylesheet" />';
+		$styles .= '<link href="' . CDN_URL . '/stylesheets/loginwindow.css" type="text/css" rel="stylesheet" />';
 		return $styles;
 	}
 
 	static function getScripts()
 	{
 		$scripts = '<script src="' . CDN_URL . '/scripts/jquery.js"></script>';
-		$scripts .= '<script src="' . CDN_URL . '/scripts/languageselector.js" /></script>';
+		$scripts .= '<script src="' . CDN_URL . '/scripts/menus.js" /></script>';
 		return $scripts;
 	}
 
@@ -42,7 +43,7 @@ class PageDrawer
 		$translator = new Translator($_SESSION['language']);
 		self::startPage();
 
-		//<input type="text" placeholder="' . $translator->getString('search') . '">
+		//Draw the main menu on the top
 		echo '<nav id="mainMenu"><div id="mainMenuContainer">';
 		echo '<div id="mainMenuLogo">Logo</div>';
 		echo '<div id="mainMenuLinks"><ul>';
@@ -50,19 +51,21 @@ class PageDrawer
 		echo '<li><a href="login.php">Login</a></li>';
 		echo '</ul></div>';
 		echo '<div id="mainMenuSearch"><input id="mainMenuSearchBar" type="text" placeholder="' . $translator->getString('search') . '"></div>';
-		echo '</div><div id="mainMenuUserPart">';
+		echo '</div>';
+		echo '<div id="mainMenuUserPart">';
+		//Draw language selection stuff
 		echo '<div id="mainMenuUserPartLanguage">';
-		/*echo '<img class="mainMenuUserPartLanguageIcon" data-language="et" src="' . CDN_URL . '/images/flags/et.png" />';
-		echo '<img class="mainMenuUserPartLanguageIcon" data-language="en" src="' . CDN_URL . '/images/flags/en.png" />';*/
 		foreach($valid_languages as $language)
 		{
 			echo '<img class="mainMenuUserPartLanguageIcon" data-language="' . $language . '" src="' . CDN_URL . '/images/flags/' . $language . '.png" />';
 		}
-		echo '</div><div id="mainMenuUserPartUser">';
+		echo '</div>';
+		//Draw welcome stuff or current user menu
+		echo '<div id="mainMenuUserPartUser">';
 		global $current_user;
 		if($current_user != null)
 		{
-			echo 'blaa';
+			echo $translator->getString('menuwelcome');
 		}
 		else
 		{
@@ -70,6 +73,23 @@ class PageDrawer
 		}
 		echo '</div></div></nav>';
 
+		//Draw the login and register window
+		if($current_user == null)
+		{
+			echo '<div id="loginWindow"><div class="background"></div><div class="container">';
+			echo '<div id="loginwindowtabs"><span id="loginwindowlefttab" onclick="selectLoginWindowTab(0)">' . $translator->getString('login') . '</span><span id="loginwindowrighttab" onclick="selectLoginWindowTab(1)">' . $translator->getString('register') . '</span></div>';
+			//Login tab content
+			echo '<div id="loginwindowtabcontent_login" style="display: none;">';
+			echo '<form method="POST" action="../eventHandler/do_login.php"><input type="text" name="username" placeholder="Username"><br><input type="password" name="password" placeholder="Password"><br><input type="submit" value="Log In"></form>';
+			echo '</div>';
+			//Register tab content
+			echo '<div id="loginwindowtabcontent_register" style="display: none;">';
+			echo 'register';
+			echo '</div>';
+			echo '</div></div>';
+		}
+
+		// Draw the alertbox stuff
 		echo '<div id="alertboxes">';
 		if(isset($_GET['msg']) && !empty($_GET['msg']) && is_array($_GET['msg']) && array_key_exists(0, $_GET['msg']) && array_key_exists(1, $_GET['msg']))
 		{
@@ -89,6 +109,7 @@ class PageDrawer
 		}
 		echo '</div>';
 
+		//Draw the main body form the page
 		echo '<div id="body">' . $page . '</div>';
 		echo self::getScripts();
 		self::endPage();

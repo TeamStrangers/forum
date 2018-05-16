@@ -1,0 +1,64 @@
+#loginWindow
+{
+	position: absolute;
+	display: none;
+	left: 0px;
+	top: 0px;
+	width: 100vw;
+	height: 100vh;
+}
+
+#loginWindow .background
+{
+	left: 0px;
+	top: 0px;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.25);
+}
+
+#loginWindow .container
+{
+	background-color: white;
+	position: absolute;
+	left: 32.5%;
+	top: 20%;
+	width: 35%;
+	height: 50%;
+	border: 1px solid black;
+}
+
+#loginWindow #loginwindowtabs
+{
+	position: relative;
+	height: 40px;
+	width: 100%;
+	border-bottom: 1px solid gray;
+	cursor: pointer;
+}
+
+#loginWindow #loginwindowtabs #loginwindowlefttab
+{
+	width: 50%;
+	height: 100%;
+	text-align: center;
+	float: left;
+}
+
+#loginWindow #loginwindowtabs #loginwindowrighttab
+{
+	width: 50%;
+	height: 100%;
+	text-align: center;
+	float: right;
+}
+
+.loginwindowselectedtab
+{
+	background-color: #4caf50;
+	color: #f44336;
+}
+
+#loginWindow #loginwindowtabcontent
+{
+}

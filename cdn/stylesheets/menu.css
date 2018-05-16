@@ -80,3 +80,16 @@
 {
 	display: inline-block;
 }
+
+.mainMenuUserPartLink
+{
+	font-size: 0.8em;
+	text-decoration: none;
+	color: blue;
+}
+
+.mainMenuUserPartLink:hover
+{
+	text-decoration: underline;
+	cursor: pointer;
+}
