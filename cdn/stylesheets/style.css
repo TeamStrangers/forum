@@ -3,6 +3,11 @@
 	font-family: 'Chalet', sans-serif;
 }
 
+a
+{
+	text-decoration: none;
+}
+
 body
 {
 	margin: 0px;

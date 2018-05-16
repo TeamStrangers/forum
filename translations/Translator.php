@@ -32,4 +32,11 @@ class Translator
 			return $string;
 		}
 	}
+
+	static function getLanguageName($code)
+	{
+		require SITE_LOCATION . '/translations/english.php';
+		require SITE_LOCATION . '/translations/estonian.php';
+		return $language[$code]['languagename'];
+	}
 }

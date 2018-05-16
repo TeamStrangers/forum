@@ -13,6 +13,7 @@ if(!defined('SITE_LOCATION')) define('SITE_LOCATION', $_SERVER['DOCUMENT_ROOT'] 
 require_once SITE_LOCATION . '/functionClasses/PageDrawer.php';
 require_once SITE_LOCATION . '/functionClasses/DatabaseHandler.php';
 require_once SITE_LOCATION . '/translations/Translator.php';
+require_once SITE_LOCATION . '/models/User.php';
 
 $mysql['hostname'] = 'localhost';
 $mysql['username'] = 'discussr';

@@ -1,7 +1,5 @@
 <?php
 
-namespace models;
-
 
 class User
 {
@@ -61,5 +59,10 @@ class User
 	function getSiteLanguage()
 	{
 		return $this->sitelanguage;
+	}
+
+	function getAvatar()
+	{
+		return $this->avatar;
 	}
 }

@@ -28,6 +28,10 @@ $(document).on("keyup", function(event) {
 	}
 });
 
+$(document).ready(function() {
+
+});
+
 function showLoginDialog()
 {
 	selectLoginWindowTab(0);
@@ -46,6 +50,9 @@ function selectLoginWindowTab(tab)
 {
 	document.getElementById('loginwindowlefttab').classList.remove("loginwindowselectedtab");
 	document.getElementById('loginwindowrighttab').classList.remove("loginwindowselectedtab");
+
+	document.getElementById('fromsite').value = window.location.pathname;
+	document.getElementById('fromsite2').value = window.location.pathname;
 
 	document.getElementById('loginwindowtabcontent_login').style.display = 'none';
 	document.getElementById('loginwindowtabcontent_register').style.display = 'none';

@@ -48,30 +48,43 @@ class PageDrawer
 		echo '<div id="mainMenuLogo">Logo</div>';
 		echo '<div id="mainMenuLinks"><ul>';
 		echo '<li><a href="index.php">Home</a></li>';
-		echo '<li><a href="login.php">Login</a></li>';
+		echo '<li><a href="index.php">Link1</a></li>';
+		echo '<li><a href="index.php">Link2</a></li>';
+		echo '<li><a href="index.php">Link3</a></li>';
 		echo '</ul></div>';
-		echo '<div id="mainMenuSearch"><input id="mainMenuSearchBar" type="text" placeholder="' . $translator->getString('search') . '"></div>';
 		echo '</div>';
 		echo '<div id="mainMenuUserPart">';
 		//Draw language selection stuff
 		echo '<div id="mainMenuUserPartLanguage">';
+		global $valid_languages;
 		foreach($valid_languages as $language)
 		{
-			echo '<img class="mainMenuUserPartLanguageIcon" data-language="' . $language . '" src="' . CDN_URL . '/images/flags/' . $language . '.png" />';
+			echo '<img class="mainMenuUserPartLanguageIcon" data-language="' . $language . '" src="' . CDN_URL . '/images/flags/' . $language . '.png" title="' . Translator::getLanguageName($language) . '" />';
 		}
 		echo '</div>';
 		//Draw welcome stuff or current user menu
-		echo '<div id="mainMenuUserPartUser">';
 		global $current_user;
 		if($current_user != null)
 		{
-			echo $translator->getString('menuwelcome');
+			echo '<div id="mainMenuUserPartUser">';
+			echo '<span>' .  $current_user->getUsername(). '</span>';
+			echo '<img src="' .  $current_user->getAvatar(). '" />';
+			echo '<ul>';
+			echo '<li><a href="' . SITE_URL . '/eventHandler/do_logout.php">' . $translator->getString('logout') . '</a></li>';
+			echo '</ul>';
+			/*$logoutlink = '<a href="' . SITE_URL . '/eventHandler/do_logout.php" class="mainMenuUserPartLink">' . $translator->getString('logout') . '</a>';
+			echo $translator->getString('menuwelcome', array('username' => $current_user->getUsername(), 'logoutlink' => $logoutlink));*/
+			echo '</div>';
 		}
 		else
 		{
-			echo $translator->getString('menuawelcome');
+			echo '<div id="mainMenuUserPartUser">';
+			$loginlink = '<a onclick="showLoginDialog()" class="mainMenuUserPartLink">' . $translator->getString('login') . '</a>';
+			$registerlink = '<a onclick="showRegisterDialog()" class="mainMenuUserPartLink">' . $translator->getString('register') . '</a>';
+			echo $translator->getString('menuawelcome', array('loginlink' => $loginlink, 'registerlink' => $registerlink));
+			echo '</div>';
 		}
-		echo '</div></div></nav>';
+		echo '</div></nav>';
 
 		//Draw the login and register window
 		if($current_user == null)
@@ -80,11 +93,11 @@ class PageDrawer
 			echo '<div id="loginwindowtabs"><span id="loginwindowlefttab" onclick="selectLoginWindowTab(0)">' . $translator->getString('login') . '</span><span id="loginwindowrighttab" onclick="selectLoginWindowTab(1)">' . $translator->getString('register') . '</span></div>';
 			//Login tab content
 			echo '<div id="loginwindowtabcontent_login" style="display: none;">';
-			echo '<form method="POST" action="../eventHandler/do_login.php"><input type="text" name="username" placeholder="Username"><br><input type="password" name="password" placeholder="Password"><br><input type="submit" value="Log In"></form>';
+			echo '<form method="POST" action="' . SITE_URL . '/eventHandler/do_login.php"><input type="text" name="username" placeholder="' . $translator->getString('userename') . '"><br><input type="password" name="password" placeholder="' . $translator->getString('password') . '"><input type="hidden" name="fromsite" id="fromsite"><br><input type="submit" value="' . $translator->getString('login') . '"></form>';
 			echo '</div>';
 			//Register tab content
 			echo '<div id="loginwindowtabcontent_register" style="display: none;">';
-			echo 'register';
+			echo '<form method="POST" action="' . SITE_URL . '/eventHandler/do_register.php"><input type="text" name="username" placeholder="' . $translator->getString('username') . '"><br><input type="email" name="email" placeholder="' . $translator->getString('email') . '"><br><input type="password" name="password" placeholder="' . $translator->getString('password') . '"><br><input type="password" name="password2" placeholder="' . $translator->getString('password2') . '"><input type="hidden" name="fromsite" id="fromsite2"><br><input type="submit" value="' . $translator->getString('register') . '"></form>';
 			echo '</div>';
 			echo '</div></div>';
 		}

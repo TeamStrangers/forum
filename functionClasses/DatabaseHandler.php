@@ -34,6 +34,7 @@ class DatabaseHandler
 
 	static function getAllUsers()
 	{
+		require SITE_LOCATION . '/config.php';
 		$user_list = array();
 		$query = self::$connection->query('SELECT * FROM `' . $mysql['dbprefix'] . 'users`');
 		while($row = $query->fetch_assoc())
@@ -46,6 +47,7 @@ class DatabaseHandler
 
 	static function getUserBySQLID($sqlid)
 	{
+		require SITE_LOCATION . '/config.php';
 		$sqlid = self::escape_string($sqlid);
 		$query = self::$connection->query('SELECT * FROM `' . $mysql['dbprefix'] . 'users` WHERE `sqlid` = \'' . $sqlid . '\' LIMIT 1');
 		if($query->num_rows > 0)
@@ -60,5 +62,15 @@ class DatabaseHandler
 	{
 		$sqlid = (int) $user->getSQLID();
 		self::$connection->query('UPDATE `' . $mysql['dbprefix'] . 'users` SET `sitelanguage` = \'' . $language . '\' WHERE `sqlid` = \'' . $sqlid . '\'');
+	}
+
+	static function createUser($username, $email, $password)
+	{
+		require SITE_LOCATION . '/config.php';
+		$username = DatabaseHandler::escape_string($username);
+		$email = DatabaseHandler::escape_string($email);
+		$password = DatabaseHandler::escape_string($password);
+		$query = self::$connection->query('INSERT INTO `' . $mysql['dbprefix'] . 'users` (username, password, email, joindate, sitelanguage) VALUES (\'' . $username . '\', \'' . $password . '\', \'' . $email . '\', \'' . time() . '\', \'' . $_SESSION['language'] . '\')');
+		return $query->last_insert_id;
 	}
 }
