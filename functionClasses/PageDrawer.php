@@ -8,6 +8,7 @@ class PageDrawer
 		$styles .= '<link href="' . CDN_URL . '/stylesheets/style.css" type="text/css" rel="stylesheet" />';
 		$styles .= '<link href="' . CDN_URL . '/stylesheets/alertbox.css" type="text/css" rel="stylesheet" />';
 		$styles .= '<link href="' . CDN_URL . '/stylesheets/loginwindow.css" type="text/css" rel="stylesheet" />';
+		$styles .= '<link href="' . CDN_URL . '/stylesheets/fontawesome/fontawesome-all.min.css" rel="stylesheet" />';
 		return $styles;
 	}
 
@@ -24,7 +25,7 @@ class PageDrawer
 		echo '<html>';
 		echo '<head>';
 		$translator = new Translator($_SESSION['language']);
-		echo '<title>' . $translator->getString('title', array('pagename' => PAGENAME)) . '</title>';
+		echo '<title>' . $translator->getString('title', array('pagename' => $translator->getString(PAGENAME))) . '</title>';
 		echo '<meta charset="UTF-8">';
 		echo self::getStyles();
 		echo '</head>';
@@ -43,17 +44,41 @@ class PageDrawer
 		$translator = new Translator($_SESSION['language']);
 		self::startPage();
 
+		global $current_user;
+
 		//Draw the main menu on the top
-		echo '<nav id="mainMenu"><div id="mainMenuContainer">';
-		echo '<div id="mainMenuLogo">Logo</div>';
-		echo '<div id="mainMenuLinks"><ul>';
+		echo '<nav id="mainMenu">';
+		echo '<img id="mainMenuLogo" src="' . CDN_URL . '/images/logo.png" alt="Logo" />';
+		echo '<ul id="mainMenuLinks">';
 		echo '<li><a href="index.php">Home</a></li>';
-		echo '<li><a href="index.php">Link1</a></li>';
-		echo '<li><a href="index.php">Link2</a></li>';
-		echo '<li><a href="index.php">Link3</a></li>';
-		echo '</ul></div>';
+		echo '<li><a href="index.php">Trending</a></li>';
+		echo '<li><a href="index.php">Most Recent</a></li>';
+		echo '</ul>';
+
+		echo '<div style="display: inline; float: right;">';
+
+		echo '<div id="mainMenuLanguage">';
+		global $valid_languages;
+		foreach($valid_languages as $language)
+		{
+			echo '<img data-language="' . $language . '" src="' . CDN_URL . '/images/flags/' . $language . '.png" title="' . Translator::getLanguageName($language) . '" />';
+		}
 		echo '</div>';
-		echo '<div id="mainMenuUserPart">';
+
+		echo '<div id="mainMenuSearch"><button><i class="fa-stack"><i class="fa fa-search fa-stack-1x"></i><i class="far fa-square fa-stack-2x"></i></i></button><input name="search" type="search" placeholder="' . $translator->getString("search") . '" /></div>';
+
+		if($current_user != null)
+		{
+			echo '<div id="mainMenuNotification"><button><i class="fa-stack"><i class="fa fa-bell fa-stack-1x"></i><i class="far fa-square fa-stack-2x"></i></i></button><div></div></div>';
+			echo '<div id="mainMenuUser"><span>' . $current_user->getUsername() . '</span><img src="' . $current_user->getAvatar() . '" alt="Avatar"/></div>';
+		}
+		else
+		{
+			echo '<div id="mainMenuUser"><a onclick="showLoginDialog()">' . $translator->getString('login') . '</a></div>';
+		}
+		echo '</div>';
+
+		/*echo '<div id="mainMenuUserPart">';
 		//Draw language selection stuff
 		echo '<div id="mainMenuUserPartLanguage">';
 		global $valid_languages;
@@ -72,8 +97,6 @@ class PageDrawer
 			echo '<ul>';
 			echo '<li><a href="' . SITE_URL . '/eventHandler/do_logout.php">' . $translator->getString('logout') . '</a></li>';
 			echo '</ul>';
-			/*$logoutlink = '<a href="' . SITE_URL . '/eventHandler/do_logout.php" class="mainMenuUserPartLink">' . $translator->getString('logout') . '</a>';
-			echo $translator->getString('menuwelcome', array('username' => $current_user->getUsername(), 'logoutlink' => $logoutlink));*/
 			echo '</div>';
 		}
 		else
@@ -83,8 +106,8 @@ class PageDrawer
 			$registerlink = '<a onclick="showRegisterDialog()" class="mainMenuUserPartLink">' . $translator->getString('register') . '</a>';
 			echo $translator->getString('menuawelcome', array('loginlink' => $loginlink, 'registerlink' => $registerlink));
 			echo '</div>';
-		}
-		echo '</div></nav>';
+		}*/
+		echo '</nav>';
 
 		//Draw the login and register window
 		if($current_user == null)
@@ -102,7 +125,7 @@ class PageDrawer
 			echo '</div></div>';
 		}
 
-		// Draw the alertbox stuff
+		// Draw the alertbox stuff TODO: Remove the dammn alertboxes one day!
 		echo '<div id="alertboxes">';
 		if(isset($_GET['msg']) && !empty($_GET['msg']) && is_array($_GET['msg']) && array_key_exists(0, $_GET['msg']) && array_key_exists(1, $_GET['msg']))
 		{
@@ -123,6 +146,14 @@ class PageDrawer
 		echo '</div>';
 
 		//Draw the main body form the page
+		echo '<div id="sidebar"><ul>';
+		if($current_user != null)
+		{
+			//echo '<li><a href="' . SITE_URL . '/eventHandler/do_logout.php">Profile</a></li>';
+			echo '<li><a href="' . SITE_URL . '/eventHandler/do_logout.php">' . $translator->getString('logout') . '</a></li>';
+		}
+		echo '</ul></div>';
+
 		echo '<div id="body">' . $page . '</div>';
 		echo self::getScripts();
 		self::endPage();

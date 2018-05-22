@@ -2,7 +2,7 @@
 
 session_start();
 
-define('PAGENAME', "Home");
+define('PAGENAME', "title_home");
 
 require 'config.php';
 
