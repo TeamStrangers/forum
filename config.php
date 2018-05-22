@@ -14,6 +14,7 @@ require_once SITE_LOCATION . '/functionClasses/PageDrawer.php';
 require_once SITE_LOCATION . '/functionClasses/DatabaseHandler.php';
 require_once SITE_LOCATION . '/translations/Translator.php';
 require_once SITE_LOCATION . '/models/User.php';
+require_once SITE_LOCATION . '/models/Categorie.php';
 
 $mysql['hostname'] = 'localhost';
 $mysql['username'] = 'discussr';
