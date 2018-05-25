@@ -51,9 +51,9 @@ class PageDrawer
 		echo '<nav id="mainMenu">';
 		echo '<img id="mainMenuLogo" src="' . CDN_URL . '/images/logo.png" alt="Logo" />';
 		echo '<ul id="mainMenuLinks">';
-		echo '<li><a href="index.php">' . $translator->getString('title_home') . '</a></li>';
-		echo '<li><a href="trending.php">' . $translator->getString('title_trending') . '</a></li>';
-		echo '<li><a href="recent.php">' . $translator->getString('title_mostrecent') . '</a></li>';
+		echo '<li><a href="' . SITE_URL . '/index.php">' . $translator->getString('title_home') . '</a></li>';
+		echo '<li><a href="' . SITE_URL . '/trending.php">' . $translator->getString('title_trending') . '</a></li>';
+		echo '<li><a href="' . SITE_URL . '/recent.php">' . $translator->getString('title_mostrecent') . '</a></li>';
 		echo '</ul>';
 
 		echo '<div style="display: inline; float: right;">';
@@ -122,10 +122,8 @@ class PageDrawer
 		echo '<ul>';
 		if($current_user != null)
 		{
-			echo '<li><a href="' . SITE_URL . '/eventHandler/do_logout.php">Profile</a></li>';
-			echo '<li><a href="' . SITE_URL . '/eventHandler/do_logout.php">Link1</a></li>';
-			echo '<li><a href="' . SITE_URL . '/eventHandler/do_logout.php">Link2</a></li>';
-			echo '<li><a href="' . SITE_URL . '/eventHandler/do_logout.php">Link3</a></li>';
+			echo '<li><a href="' . SITE_URL . '/userCP/view_profile.php?uid=' . $current_user->getSQLID() . '">' . $translator->getString('profile') . '</a></li>';
+			echo '<li><a href="' . SITE_URL . '/userCP/usercp.php">' . $translator->getString('account_settings') . '</a></li>';
 			echo '<li><a href="' . SITE_URL . '/eventHandler/do_logout.php">' . $translator->getString('logout') . '</a></li>';
 		}
 		echo '</ul>';

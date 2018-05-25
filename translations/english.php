@@ -28,6 +28,8 @@ $language[$lng]['usernametaken'] = 'That username is already registred!';
 $language[$lng]['emailtaken'] = 'That email already has an account!';
 $language[$lng]['usercreated'] = 'User created!';
 $language[$lng]['logout'] = 'Log out';
+$language[$lng]['profile'] = 'Profile';
+$language[$lng]['account_settings'] = 'Account Settings';
 $language[$lng]['menuwelcome'] = 'Hi, {username}<br>{logoutlink}';
 
 unset($lng);

@@ -27,6 +27,8 @@ $language[$lng]['logoutsuccess'] = 'Väljalogimine õnnestus!';
 $language[$lng]['usernametaken'] = 'See kasutajanimi on juba kasutusel!';
 $language[$lng]['emailtaken'] = 'See email on juba kasutusel!';
 $language[$lng]['logout'] = 'Logi välja';
+$language[$lng]['profile'] = 'Profiil';
+$language[$lng]['account_settings'] = 'Konto seaded';
 $language[$lng]['menuwelcome'] = 'Tere, {username}<br>{logoutlink}';
 
 unset($lng);
