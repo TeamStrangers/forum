@@ -1,3 +1,5 @@
+var loginWindowShown = false;
+
 $("#mainMenuLanguage img").on("click", function() {
 	var language = $(this).attr("data-language");
 
@@ -6,8 +8,6 @@ $("#mainMenuLanguage img").on("click", function() {
 		location.reload();
 	});
 });
-
-var loginWindowShown = false;
 
 $("#loginWindow .background").on("click", function() {
 	if(loginWindowShown == true)

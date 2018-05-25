@@ -4,7 +4,7 @@
 	left: 0;
 	width: 100%;
 	height: 6vh;
-	position: absolute;
+	position: fixed;
 	text-align: center;
 }
 
@@ -35,12 +35,12 @@
 	padding: 1em;
 	border-bottom: 4px solid rgba(0, 0, 0, 0);
 	transition: border-bottom 0.3s;
-	color: green;
+	color: #036d00;
 }
 
 #mainMenuLinks li a:hover
 {
-	border-bottom: 4px solid green;
+	border-bottom: 4px solid #036d00;
 }
 
 #mainMenuLanguage
@@ -66,13 +66,40 @@
 	display: inline;
 }
 
+#mainMenuSearch form
+{
+	display: inline;
+	padding: 0.8vh;
+	background-color: #d7d7d7;
+	margin-right: 5px;
+}
+
 #mainMenuSearch button
 {
+	display: inline-block;
+	background-color: rgba(0, 0, 0, 0);
+	border: 0px;
+	padding: 0px;
+	margin: 0;
+}
+
+#mainMenuSearch button i
+{
+	padding: 0.6em;
+	display: block;
 }
 
 #mainMenuSearch input
 {
-	display: none;
+	display: inline-block;
+	border: 0;
+	background-color: rgba(0, 0, 0, 0);
+	margin: 5px;
+}
+
+#mainMenuSearch input:focus
+{
+	outline: 0;
 }
 
 #mainMenuNotification
@@ -82,11 +109,34 @@
 
 #mainMenuNotification button
 {
+	background-color: transparent;
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+#mainMenuNotification button i
+{
+	padding: 8px 12px;
+	font-size: 1.2em;
 }
 
 #mainMenuNotification div
 {
 	display: none;
+}
+
+.badge
+{
+	position: absolute;
+	font-weight: bold;
+	padding: 0px 3px;
+	font-size: 0.8em;
+	margin-top: -7px;
+	margin-left: -7px;
+	border-radius: 50%;
+	color: white;
+	background-color: red;
 }
 
 #mainMenuUser
@@ -115,112 +165,3 @@
 	vertical-align: middle;
 	border-radius: 50%;
 }
-
-
-
-
-
-
-
-/*#mainMenuUserPart
-{
-	float: right;
-	display: inline-block;
-}
-
-#mainMenuUserPartLanguage
-{
-	display: inline-block;
-	vertical-align: top;
-	margin-right: 25px;
-}
-
-.mainMenuUserPartLanguageIcon
-{
-	width: 25px;
-	margin-right: 5px;
-}
-
-.mainMenuUserPartLanguageIcon:hover
-{
-	cursor: pointer;
-	filter: drop-shadow(1px 2px 2px black);
-}
-
-.mainMenuUserPartLink
-{
-	font-size: 0.8em;
-	text-decoration: none;
-	color: blue;
-}
-
-.mainMenuUserPartLink:hover
-{
-	text-decoration: underline;
-	cursor: pointer;
-}
-
-#mainMenuUserPartUser
-{
-	margin-right: 7px;
-	margin-top: 7px;
-	display: inline-block;
-	vertical-align: middle;
-}
-
-#mainMenuUserPartUser span
-{
-	margin-right: 7px;
-	vertical-align: middle;
-}
-
-#mainMenuUserPartUser img
-{
-	vertical-align: middle;
-	height: 50px;
-	width: 50px;
-	border-radius: 50%;
-	transition: border-radius 0.5s
-}
-
-#mainMenuUserPartUser ul
-{
-	display: none;
-	background-color: white;
-	border: 1px solid gray;
-	border-radius: 3px;
-	height: 100px;
-	width: 100%;
-	list-style-type: none;
-	padding: 0px;
-	margin: 0px;
-	margin-top: 8px;
-}
-
-#mainMenuUserPartUser ul li
-{
-	width: 100%;
-}
-
-#mainMenuUserPartUser ul li a
-{
-	padding-left: 5px;
-	color: gray;
-	width: 100%;
-}
-
-#mainMenuUserPartUser ul li a:hover
-{
-	color: white;
-	background-color: gray;
-}
-
-#mainMenuUserPartUser:hover img
-{
-	border-radius: 7%;
-}
-
-#mainMenuUserPartUser:hover ul
-{
-	display: block;
-}*/

@@ -2,7 +2,7 @@
 
 session_start();
 
-define('PAGENAME', "title_home");
+define('PAGENAME', "title_trending");
 
 require 'config.php';
 
@@ -12,7 +12,7 @@ $translator = new Translator($_SESSION['language']);
 
 
 
-$page = 'Home';
+$page = 'Trending';
 
 
 PageDrawer::drawPage($page);

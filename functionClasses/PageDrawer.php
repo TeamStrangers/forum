@@ -27,6 +27,7 @@ class PageDrawer
 		$translator = new Translator($_SESSION['language']);
 		echo '<title>' . $translator->getString('title', array('pagename' => $translator->getString(PAGENAME))) . '</title>';
 		echo '<meta charset="UTF-8">';
+		echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
 		echo self::getStyles();
 		echo '</head>';
 		echo '<body>';
@@ -50,9 +51,9 @@ class PageDrawer
 		echo '<nav id="mainMenu">';
 		echo '<img id="mainMenuLogo" src="' . CDN_URL . '/images/logo.png" alt="Logo" />';
 		echo '<ul id="mainMenuLinks">';
-		echo '<li><a href="index.php">Home</a></li>';
-		echo '<li><a href="index.php">Trending</a></li>';
-		echo '<li><a href="index.php">Most Recent</a></li>';
+		echo '<li><a href="index.php">' . $translator->getString('title_home') . '</a></li>';
+		echo '<li><a href="trending.php">' . $translator->getString('title_trending') . '</a></li>';
+		echo '<li><a href="recent.php">' . $translator->getString('title_mostrecent') . '</a></li>';
 		echo '</ul>';
 
 		echo '<div style="display: inline; float: right;">';
@@ -65,11 +66,11 @@ class PageDrawer
 		}
 		echo '</div>';
 
-		echo '<div id="mainMenuSearch"><button><i class="fa-stack"><i class="fa fa-search fa-stack-1x"></i><i class="far fa-square fa-stack-2x"></i></i></button><input name="search" type="search" placeholder="' . $translator->getString("search") . '" /></div>';
+		echo '<div id="mainMenuSearch"><form action="search.php" method="get"><input name="search" type="text" placeholder="' . $translator->getString("search") . '" /><button type="submit"><i class="fa fa-search"></i></button></form></div>';
 
 		if($current_user != null)
 		{
-			echo '<div id="mainMenuNotification"><button><i class="fa-stack"><i class="fa fa-bell fa-stack-1x"></i><i class="far fa-square fa-stack-2x"></i></i></button><div></div></div>';
+			echo '<div id="mainMenuNotification"><button><i class="fa fa-bell"><span class="badge"></span></i></button><div></div></div>';
 			echo '<div id="mainMenuUser"><span>' . $current_user->getUsername() . '</span><img src="' . $current_user->getAvatar() . '" alt="Avatar"/></div>';
 		}
 		else
@@ -78,35 +79,6 @@ class PageDrawer
 		}
 		echo '</div>';
 
-		/*echo '<div id="mainMenuUserPart">';
-		//Draw language selection stuff
-		echo '<div id="mainMenuUserPartLanguage">';
-		global $valid_languages;
-		foreach($valid_languages as $language)
-		{
-			echo '<img class="mainMenuUserPartLanguageIcon" data-language="' . $language . '" src="' . CDN_URL . '/images/flags/' . $language . '.png" title="' . Translator::getLanguageName($language) . '" />';
-		}
-		echo '</div>';
-		//Draw welcome stuff or current user menu
-		global $current_user;
-		if($current_user != null)
-		{
-			echo '<div id="mainMenuUserPartUser">';
-			echo '<span>' .  $current_user->getUsername(). '</span>';
-			echo '<img src="' .  $current_user->getAvatar(). '" />';
-			echo '<ul>';
-			echo '<li><a href="' . SITE_URL . '/eventHandler/do_logout.php">' . $translator->getString('logout') . '</a></li>';
-			echo '</ul>';
-			echo '</div>';
-		}
-		else
-		{
-			echo '<div id="mainMenuUserPartUser">';
-			$loginlink = '<a onclick="showLoginDialog()" class="mainMenuUserPartLink">' . $translator->getString('login') . '</a>';
-			$registerlink = '<a onclick="showRegisterDialog()" class="mainMenuUserPartLink">' . $translator->getString('register') . '</a>';
-			echo $translator->getString('menuawelcome', array('loginlink' => $loginlink, 'registerlink' => $registerlink));
-			echo '</div>';
-		}*/
 		echo '</nav>';
 
 		//Draw the login and register window
@@ -146,13 +118,31 @@ class PageDrawer
 		echo '</div>';
 
 		//Draw the main body form the page
-		echo '<div id="sidebar"><ul>';
+		echo '<div id="sidebar">';
+		echo '<ul>';
 		if($current_user != null)
 		{
-			//echo '<li><a href="' . SITE_URL . '/eventHandler/do_logout.php">Profile</a></li>';
+			echo '<li><a href="' . SITE_URL . '/eventHandler/do_logout.php">Profile</a></li>';
+			echo '<li><a href="' . SITE_URL . '/eventHandler/do_logout.php">Link1</a></li>';
+			echo '<li><a href="' . SITE_URL . '/eventHandler/do_logout.php">Link2</a></li>';
+			echo '<li><a href="' . SITE_URL . '/eventHandler/do_logout.php">Link3</a></li>';
 			echo '<li><a href="' . SITE_URL . '/eventHandler/do_logout.php">' . $translator->getString('logout') . '</a></li>';
 		}
-		echo '</ul></div>';
+		echo '</ul>';
+
+		echo '<ul>';
+		echo '<li><a href="' . SITE_URL . '/eventHandler/do_logout.php">Kategooriad1?</a></li>';
+		echo '<li><a href="' . SITE_URL . '/eventHandler/do_logout.php">Kategooriad2</a></li>';
+		echo '<li><a href="' . SITE_URL . '/eventHandler/do_logout.php">Kategooriad3</a></li>';
+		echo '<li><a href="' . SITE_URL . '/eventHandler/do_logout.php">Kategooriad4</a></li>';
+		echo '<li><a href="' . SITE_URL . '/eventHandler/do_logout.php">Kategooriad5</a></li>';
+		echo '</ul>';
+
+		echo '<ul>';
+		echo '<li><a href="' . SITE_URL . '/eventHandler/do_logout.php">Kolmas ka?</a></li>';
+		echo '<li><a href="' . SITE_URL . '/eventHandler/do_logout.php">Kategooriad3</a></li>';
+		echo '</ul>';
+		echo '</div>';
 
 		echo '<div id="body">' . $page . '</div>';
 		echo self::getScripts();
