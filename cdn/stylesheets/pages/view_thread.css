@@ -1,0 +1,110 @@
+#mainThread
+{
+	border: 1px solid #cdcdcd;
+}
+
+#mainThread .poster
+{
+	background-color: #ebebeb;
+	display: inline-block;
+	width: 25%;
+	border-right: 1px solid #cdcdcd;
+	border-bottom: 1px solid #cdcdcd;
+	padding: 15px;
+}
+
+#mainThread .poster .avatar
+{
+	display: block;
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+#mainThread .poster .infofield
+{
+	display: block;
+	text-align: center;
+	width: 100%;
+}
+
+#mainThread .poster .infofield .left
+{
+	font-size: 0.8em;
+	display: inline;
+	float: left;
+}
+
+#mainThread .poster .infofield .right
+{
+	font-size: 0.8em;
+	display: inline;
+	float: right;
+}
+
+#mainThread .poster *
+{
+	display: block;
+}
+
+#mainThread .content
+{
+	width: 75%;
+	vertical-align: top;
+	display: inline-block;
+	padding: 15px;
+}
+
+#mainThread .content span
+{
+	width: 100%;
+	display: inline-block;
+	font-weight: bold;
+	text-align: center;
+	padding: 15px;
+	background-color: #ebebeb;
+}
+
+
+
+#posts
+{
+	margin-top: 15px;
+}
+
+#posts .post
+{
+	border: 1px solid #cdcdcd;
+	margin-bottom: 15px;
+}
+
+#posts .post .poster
+{
+	background-color: #ebebeb;
+	display: inline-block;
+	width: 25%;
+	border-right: 1px solid #cdcdcd;
+	border-bottom: 1px solid #cdcdcd;
+	padding: 15px;
+}
+
+#posts .post .poster .avatar
+{
+	width: 100%;
+	margin-bottom: 5px;
+	display: block;
+}
+
+#posts .post  .poster .infofield
+{
+	display: block;
+	text-align: center;
+	width: 100%;
+}
+
+#posts .post .content
+{
+	width: 75%;
+	padding: 15px;
+	vertical-align: top;
+	display: inline-block;
+}

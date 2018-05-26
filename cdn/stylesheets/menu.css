@@ -7,6 +7,7 @@
 	position: fixed;
 	text-align: center;
 	background-color: white;
+	border-bottom: 1px solid #cdcdcd;
 }
 
 #mainMenuLogo
@@ -71,7 +72,7 @@
 {
 	display: inline;
 	padding: 0.8vh;
-	background-color: #d7d7d7;
+	background-color: #ebebeb;
 	margin-right: 5px;
 }
 
@@ -150,7 +151,8 @@
 	cursor: pointer;
 	color: blue;
 	font-size: 0.8em;
-	padding: 15px;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 
 #mainMenuUser span

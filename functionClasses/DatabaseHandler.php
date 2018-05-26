@@ -73,4 +73,62 @@ class DatabaseHandler
 		$query = self::$connection->query('INSERT INTO `' . $mysql['dbprefix'] . 'users` (username, password, email, joindate, sitelanguage) VALUES (\'' . $username . '\', \'' . $password . '\', \'' . $email . '\', \'' . time() . '\', \'' . $_SESSION['language'] . '\')');
 		return $query->last_insert_id;
 	}
+
+	static function getCategoriesByList($categories, $withThreads = false, $withPosts = false)
+	{
+		require SITE_LOCATION . '/config.php';
+		$list = array();
+		$query = self::$connection->query('SELECT * FROM `' . $mysql['dbprefix'] . 'categories` WHERE `sqlid` IN(' . $categories . ')');
+		while($row = $query->fetch_assoc())
+		{
+			$categorie = new Categorie($row);
+			if($withThreads)
+			{
+				$query2 = self::$connection->query('SELECT * FROM `' . $mysql['dbprefix'] . 'threads` WHERE `categorie` = \'' . $categorie->getSQLID() . '\'');
+				$threads = array();
+				while($row2 = $query2->fetch_assoc())
+				{
+					$thread = new Thread($row2);
+					if($withPosts)
+					{
+						$posts = array();
+						$query3 = self::$connection->query('SELECT * FROM `' . $mysql['dbprefix'] . 'posts` WHERE `thread` = \'' . $thread->getSQLID() . '\'');
+						while($row3 = $query3->fetch_assoc())
+						{
+							$post = new Post($row3);
+							array_push($posts, $post);
+						}
+						$thread->setPosts($posts);
+					}
+					array_push($threads, $thread);
+				}
+				$categorie->setThreads($threads);
+			}
+			array_push($list, $categorie);
+		}
+		return $list;
+	}
+
+	static function getThreadBySQLID($sqlid, $withPosts = false)
+	{
+		require SITE_LOCATION . '/config.php';
+		$query = self::$connection->query('SELECT * FROM `' . $mysql['dbprefix'] . 'threads` WHERE `sqlid` = \'' . $sqlid . '\' LIMIT 1');
+		if($query->num_rows > 0)
+		{
+			$thread = new Thread($query->fetch_assoc());
+			if($withPosts)
+			{
+				$query2 = self::$connection->query('SELECT * FROM `' . $mysql['dbprefix'] . 'posts` WHERE `thread` = \'' . $thread->getSQLID() . '\'');
+				$posts = array();
+				while($row = $query2->fetch_assoc())
+				{
+					$post = new Post($row);
+					array_push($posts, $post);
+				}
+				$thread->setPosts($posts);
+			}
+			return $thread;
+		}
+		else return null;
+	}
 }

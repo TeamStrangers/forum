@@ -11,7 +11,7 @@ a
 
 body
 {
-	margin: 0px;
+	margin: 0;
 }
 
 #body
@@ -21,6 +21,7 @@ body
 	margin-left: 20.5vw;
 	margin-top: 8vh;
 	width: 45vw;
+	padding-bottom: 4vh;
 }
 
 #sidebar

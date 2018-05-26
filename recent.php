@@ -3,6 +3,7 @@
 session_start();
 
 define('PAGENAME', "title_mostrecent");
+define('THIS_SCRIPT', 'recent');
 
 require 'config.php';
 

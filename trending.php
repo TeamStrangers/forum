@@ -3,6 +3,7 @@
 session_start();
 
 define('PAGENAME', "title_trending");
+define('THIS_SCRIPT', 'trending');
 
 require 'config.php';
 

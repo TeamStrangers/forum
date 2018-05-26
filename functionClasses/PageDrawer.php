@@ -9,6 +9,7 @@ class PageDrawer
 		$styles .= '<link href="' . CDN_URL . '/stylesheets/alertbox.css" type="text/css" rel="stylesheet" />';
 		$styles .= '<link href="' . CDN_URL . '/stylesheets/loginwindow.css" type="text/css" rel="stylesheet" />';
 		$styles .= '<link href="' . CDN_URL . '/stylesheets/fontawesome/fontawesome-all.min.css" rel="stylesheet" />';
+		$styles .= '<link href="' . CDN_URL . '/stylesheets/pages/' . THIS_SCRIPT . '.css" rel="stylesheet" />';
 		return $styles;
 	}
 
@@ -16,6 +17,7 @@ class PageDrawer
 	{
 		$scripts = '<script src="' . CDN_URL . '/scripts/jquery.js"></script>';
 		$scripts .= '<script src="' . CDN_URL . '/scripts/menus.js" /></script>';
+		$scripts .= '<script src="' . CDN_URL . '/scripts/pages/' . THIS_SCRIPT . '.js" /></script>';
 		return $scripts;
 	}
 
@@ -25,7 +27,8 @@ class PageDrawer
 		echo '<html>';
 		echo '<head>';
 		$translator = new Translator($_SESSION['language']);
-		echo '<title>' . $translator->getString('title', array('pagename' => $translator->getString(PAGENAME))) . '</title>';
+		if(!defined('CUSTOM_TITLE')) echo '<title>' . $translator->getString('title', array('pagename' => $translator->getString(PAGENAME))) . '</title>';
+		else { echo '<title>' . CUSTOM_TITLE . '</title>'; }
 		echo '<meta charset="UTF-8">';
 		echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
 		echo self::getStyles();
@@ -62,7 +65,7 @@ class PageDrawer
 		global $valid_languages;
 		foreach($valid_languages as $language)
 		{
-			echo '<img data-language="' . $language . '" src="' . CDN_URL . '/images/flags/' . $language . '.png" title="' . Translator::getLanguageName($language) . '" />';
+			echo '<img data-language="' . $language . '" data-changeurl="' . SITE_URL . '/eventHandler/do_languageChange.php" src="' . CDN_URL . '/images/flags/' . $language . '.png" title="' . Translator::getLanguageName($language) . '" />';
 		}
 		echo '</div>';
 
@@ -75,7 +78,7 @@ class PageDrawer
 		}
 		else
 		{
-			echo '<div id="mainMenuUser"><a onclick="showLoginDialog()">' . $translator->getString('login') . '</a></div>';
+			echo '<div id="mainMenuUser"><a onclick="showLoginDialog()">' . $translator->getString('login') . '</a><a onclick="showRegisterDialog()">' . $translator->getString('register') . '</a></div>';
 		}
 		echo '</div>';
 
@@ -129,16 +132,16 @@ class PageDrawer
 		echo '</ul>';
 
 		echo '<ul>';
-		echo '<li><a href="' . SITE_URL . '/eventHandler/do_logout.php">Kategooriad1?</a></li>';
-		echo '<li><a href="' . SITE_URL . '/eventHandler/do_logout.php">Kategooriad2</a></li>';
-		echo '<li><a href="' . SITE_URL . '/eventHandler/do_logout.php">Kategooriad3</a></li>';
-		echo '<li><a href="' . SITE_URL . '/eventHandler/do_logout.php">Kategooriad4</a></li>';
-		echo '<li><a href="' . SITE_URL . '/eventHandler/do_logout.php">Kategooriad5</a></li>';
+		echo '<li><a href="' . SITE_URL . '/index.php">Kategooriad1?</a></li>';
+		echo '<li><a href="' . SITE_URL . '/index.php">Kategooriad2</a></li>';
+		echo '<li><a href="' . SITE_URL . '/index.php">Kategooriad3</a></li>';
+		echo '<li><a href="' . SITE_URL . '/index.php">Kategooriad4</a></li>';
+		echo '<li><a href="' . SITE_URL . '/index.php">Kategooriad5</a></li>';
 		echo '</ul>';
 
 		echo '<ul>';
-		echo '<li><a href="' . SITE_URL . '/eventHandler/do_logout.php">Kolmas ka?</a></li>';
-		echo '<li><a href="' . SITE_URL . '/eventHandler/do_logout.php">Kategooriad3</a></li>';
+		echo '<li><a href="' . SITE_URL . '/index.php">Kolmas ka?</a></li>';
+		echo '<li><a href="' . SITE_URL . '/index.php">Mdea mis siia panna</a></li>';
 		echo '</ul>';
 		echo '</div>';
 

@@ -3,6 +3,7 @@
 session_start();
 
 define('PAGENAME', "account_settings");
+define('THIS_SCRIPT', 'usercp');
 
 require '../config.php';
 

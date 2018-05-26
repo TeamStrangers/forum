@@ -7,6 +7,7 @@ class Categorie
 	private $parent;
 	private $name;
 	private $agelimit;
+	private $threads;
 
 	function __construct($dbRow)
 	{
@@ -14,6 +15,16 @@ class Categorie
 		$this->parent = $dbRow['parent'];
 		$this->name = $dbRow['name'];
 		$this->agelimit = $dbRow['agelimit'];
+	}
+
+	function setThreads($threads)
+	{
+		$this->threads = $threads;
+	}
+
+	function getThreads()
+	{
+		return $this->threads;
 	}
 
 	function getSQLID()
