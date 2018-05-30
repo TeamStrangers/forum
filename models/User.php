@@ -151,4 +151,36 @@ class User
 	{
 		$this->avatar = $new_avatar;
 	}
+
+	public function setGender($gender)
+	{
+		$this->gender = $gender;
+	}
+
+	public function setDescription($description)
+	{
+		$this->description = $description;
+	}
+
+	public function setMotto($motto)
+	{
+		$this->motto = $motto;
+	}
+
+	public function setHomepage($homepage)
+	{
+		$this->homepage = $homepage;
+	}
+
+	public function setNationality($nationality)
+	{
+		$this->nationality = $nationality;
+	}
+
+	public function setTimezone($timezone)
+	{
+		$this->timezone = $timezone;
+	}
+
+
 }

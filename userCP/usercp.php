@@ -26,7 +26,35 @@ if($current_user != null)
 	{
 		if($_REQUEST['page'] == 'changeprofile')
 		{
-			$page .= '';
+			if(isset($_POST['gender']) || isset($_POST['description']) || isset($_POST['motto']) || isset($_POST['homepage']) || isset($_POST['nationality']) || isset($_POST['timezone']))
+			{
+				if(isset($_POST['gender'])) $current_user->setGender(DatabaseHandler::escape_string($_POST['gender']));
+				if(isset($_POST['description'])) $current_user->setDescription(DatabaseHandler::escape_string($_POST['description']));
+				if(isset($_POST['motto'])) $current_user->setMotto(DatabaseHandler::escape_string($_POST['motto']));
+				if(isset($_POST['homepage'])) $current_user->setHomepage(DatabaseHandler::escape_string($_POST['homepage']));
+				if(isset($_POST['nationality'])) $current_user->setNationality(DatabaseHandler::escape_string($_POST['nationality']));
+				if(isset($_POST['timezone'])) $current_user->setTimezone(DatabaseHandler::escape_string($_POST['timezone']));
+
+				DatabaseHandler::saveUser($current_user);
+
+				PageDrawer::redirectTo('/userCP/usercp.php?page=changeprofile');
+			}
+			else
+			{
+				$page .= '<form method="POST">';
+				$page .= '<select name="gender">';
+				$page .= '<option value="0"' . ($current_user->getGender()==0?' selected':'') . '>' . $translator->getString('changeprofile_gender0') . '</option>';
+				$page .= '<option value="1"' . ($current_user->getGender()==1?' selected':'') . '>' . $translator->getString('changeprofile_gender1') . '</option>';
+				$page .= '<option value="2"' . ($current_user->getGender()==2?' selected':'') . '>' . $translator->getString('changeprofile_gender2') . '</option>';
+				$page .= '</select><br>';
+				$page .= '<input type="text" name="description" placeholder="'.$translator->getString('changeprofile_description').'" value="' . $current_user->getDescription() . '"><br>';
+				$page .= '<input type="text" name="motto" placeholder="'.$translator->getString('changeprofile_motto').'" value="' . $current_user->getMotto() . '"><br>';
+				$page .= '<input type="text" name="homepage" placeholder="'.$translator->getString('changeprofile_homepage').'" value="' . $current_user->getHomepage() . '"><br>';
+				$page .= '<input type="text" name="nationality" placeholder="'.$translator->getString('changeprofile_nationality').'" value="' . $current_user->getNationality() . '"><br>';
+				$page .= '<input type="text" name="timezone" placeholder="'.$translator->getString('changeprofile_timezone').'" value="' . $current_user->getTimezone() . '"><br>';
+				$page .= '<input type="submit" value="'.$translator->getString('save_profile').'"><br>';
+				$page .= '</form>';
+			}
 		}
 		else if($_REQUEST['page'] == 'changepw')
 		{

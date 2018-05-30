@@ -141,7 +141,7 @@ class DatabaseHandler
 		$fields .= '`email` = \'' . $user->getEmail() . '\',';
 		$fields .= '`sitelanguage` = \'' . $user->getSiteLanguage() . '\',';
 		$fields .= '`gender` = \'' . $user->getGender() . '\',';
-		$fields .= '`avatars` = \'' . $user->getAvatar() . '\',';
+		$fields .= '`avatar` = \'' . $user->getAvatar() . '\',';
 		$fields .= '`role` = \'' . $user->getRole() . '\',';
 		$fields .= '`description` = \'' . $user->getDescription() . '\',';
 		$fields .= '`motto` = \'' . $user->getMotto() . '\',';

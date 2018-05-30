@@ -48,5 +48,15 @@ $language[$lng]['change_avatar'] = 'Muuda avatari';
 $language[$lng]['change_profile'] = 'Muuda profiili';
 $language[$lng]['change_username'] = 'Muuda kasutajanime';
 $language[$lng]['gravatar_email'] = 'Gravatari email';
+$language[$lng]['save_profile'] = 'Salvesta profiil';
+$language[$lng]['changeprofile_gender'] = 'Sugu';
+$language[$lng]['changeprofile_gender0'] = 'Määramatta';
+$language[$lng]['changeprofile_gender1'] = 'Mees';
+$language[$lng]['changeprofile_gender2'] = 'Naine';
+$language[$lng]['changeprofile_description'] = 'Kirjeldus';
+$language[$lng]['changeprofile_motto'] = 'Motto';
+$language[$lng]['changeprofile_homepage'] = 'Koduleht profiil';
+$language[$lng]['changeprofile_nationality'] = 'Asukoht';
+$language[$lng]['changeprofile_timezone'] = 'Ajatsoon';
 
 unset($lng);

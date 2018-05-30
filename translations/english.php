@@ -49,5 +49,15 @@ $language[$lng]['change_avatar'] = 'Change avatar';
 $language[$lng]['change_profile'] = 'Edit profile';
 $language[$lng]['change_username'] = 'Change username';
 $language[$lng]['gravatar_email'] = 'Gravatar email';
+$language[$lng]['save_profile'] = 'Save profile';
+$language[$lng]['changeprofile_gender'] = 'Gender';
+$language[$lng]['changeprofile_gender0'] = 'Undisclosed';
+$language[$lng]['changeprofile_gender1'] = 'Male';
+$language[$lng]['changeprofile_gender2'] = 'Woman';
+$language[$lng]['changeprofile_description'] = 'Description';
+$language[$lng]['changeprofile_motto'] = 'Motto';
+$language[$lng]['changeprofile_homepage'] = 'Homepage';
+$language[$lng]['changeprofile_nationality'] = 'Nationality';
+$language[$lng]['changeprofile_timezone'] = 'Timezone';
 
 unset($lng);
