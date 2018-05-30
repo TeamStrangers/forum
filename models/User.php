@@ -136,4 +136,9 @@ class User
 	{
 		$this->password = $new_pass;
 	}
+
+	public function setEmail($new_email)
+	{
+		$this->email = $new_email;
+	}
 }

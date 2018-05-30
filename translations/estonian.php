@@ -21,6 +21,7 @@ $language[$lng]['register'] = 'Registreeru';
 $language[$lng]['username'] = 'Kasutajanimi';
 $language[$lng]['userename'] = 'Kasutajanimi/Email';
 $language[$lng]['email'] = 'Email';
+$language[$lng]['email2'] = 'Uus Email';
 $language[$lng]['password'] = 'Parool';
 $language[$lng]['password2'] = 'Korda Parool';
 $language[$lng]['password3'] = 'Uus Parool';

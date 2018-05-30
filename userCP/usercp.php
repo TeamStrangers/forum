@@ -54,6 +54,19 @@ if($current_user != null)
 		}
 		else if($_REQUEST['page'] == 'changemail')
 		{
+			if(isset($_POST['new-email']))
+			{
+				$new_email = DatabaseHandler::escape_string($_POST['new-email']);
+				$current_user->setEmail($new_email);
+				DatabaseHandler::saveUser($current_user);
+			}
+			else
+			{
+				$page .= '<form method="POST">';
+				$page .= '<input type="email" name="new-email" placeholder="'.$translator->getString('email2').'" required><br>';
+				$page .= '<input type="submit" value="'.$translator->getString('change_email').'"><br>';
+				$page .= '</form>';
+			}
 		}
 		else if($_REQUEST['page'] == 'changeavatar')
 		{

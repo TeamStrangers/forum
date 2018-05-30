@@ -21,6 +21,7 @@ $language[$lng]['register'] = 'Register';
 $language[$lng]['username'] = 'Username';
 $language[$lng]['userename'] = 'Username/Email';
 $language[$lng]['email'] = 'Email';
+$language[$lng]['email2'] = 'New Email';
 $language[$lng]['password'] = 'Password';
 $language[$lng]['password2'] = 'Repeat Password';
 $language[$lng]['password3'] = 'New Password';
