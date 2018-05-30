@@ -146,4 +146,9 @@ class User
 	{
 		$this->username = $new_username;
 	}
+
+	public function setAvatar($new_avatar)
+	{
+		$this->avatar = $new_avatar;
+	}
 }

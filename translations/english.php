@@ -48,5 +48,6 @@ $language[$lng]['change_email'] = 'Change email';
 $language[$lng]['change_avatar'] = 'Change avatar';
 $language[$lng]['change_profile'] = 'Edit profile';
 $language[$lng]['change_username'] = 'Change username';
+$language[$lng]['gravatar_email'] = 'Gravatar email';
 
 unset($lng);

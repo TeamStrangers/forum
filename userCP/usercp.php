@@ -42,6 +42,7 @@ if($current_user != null)
 						DatabaseHandler::saveUser($current_user);
 					}
 				}
+				PageDrawer::redirectTo('/userCP/usercp.php?page=changepw');
 			}
 			else
 			{
@@ -72,6 +73,7 @@ if($current_user != null)
 					$current_user->setEmail($new_email);
 					DatabaseHandler::saveUser($current_user);
 				}
+				PageDrawer::redirectTo('/userCP/usercp.php?page=changemail');
 			}
 			else
 			{
@@ -100,6 +102,7 @@ if($current_user != null)
 					$current_user->setUsername($new_username);
 					DatabaseHandler::saveUser($current_user);
 				}
+				PageDrawer::redirectTo('/userCP/usercp.php?page=changename');
 			}
 			else
 			{
@@ -111,6 +114,21 @@ if($current_user != null)
 		}
 		else if($_REQUEST['page'] == 'changeavatar')
 		{
+			if(isset($_POST['avatar']))
+			{
+				$email = md5($_POST['avatar']);
+				$avatarurl = 'http://www.gravatar.com/avatar/' . $email . '?s=200';
+				$current_user->setAvatar($avatarurl);
+				DatabaseHandler::saveUser($current_user);
+				PageDrawer::redirectTo('/userCP/usercp.php?page=changeavatar');
+			}
+			else
+			{
+				$page .= '<form method="POST">';
+				$page .= '<input type="email" name="avatar" placeholder="'.$translator->getString('gravatar_email').'"><br>';
+				$page .= '<input type="submit" value="'.$translator->getString('change_avatar').'"><br>';
+				$page .= '</form>';
+			}
 		}
 	}
 	else PageDrawer::redirectTo('/userCP/usercp.php?page=changeprofile');

@@ -35,7 +35,7 @@ if($thread != null)
 	$page .= '<div id="mainThread">';
 
 	$page .= '<div class="poster">';
-	$page .= '<img class="avatar" src="' . $poster->getAvatar() . '">';
+	$page .= '<img class="avatars" src="' . $poster->getAvatar() . '">';
 	$page .= '<span class="infofield"><a href="' . SITE_URL . '/userCP/view_profile.php?uid=' . $poster->getSQLID() . '">' . $poster->getUsername() . '</a></span>';
 	$page .= '<span class="infofield" style="margin: 5px 0;">' . $poster->getRoleTxt() . '</span>';
 	$page .= '<span class="infofield" style="margin: 10px 0; font-size: 0.8em;">' . htmlspecialchars($poster->getNationality()) . '</span>';
@@ -57,7 +57,7 @@ if($thread != null)
 
 		$page .= '<div class="post">';
 		$page .= '<div class="poster">';
-		$page .= '<img class="avatar" src="' . $poster2->getAvatar() . '">';
+		$page .= '<img class="avatars" src="' . $poster2->getAvatar() . '">';
 		$page .= '<span class="infofield"><a href="' . SITE_URL . '/userCP/view_profile.php?uid=' . $poster2->getSQLID() . '">' . $poster2->getUsername() . '</a></span>';
 		$page .= '<span class="infofield" style="margin: 5px 0;">' . $poster2->getRoleTxt() . '</span>';
 		$page .= '</div>';

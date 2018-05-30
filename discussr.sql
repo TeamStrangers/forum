@@ -102,7 +102,7 @@ CREATE TABLE `discussr_users` (
   `joindate` int(11) NOT NULL,
   `sitelanguage` varchar(4) NOT NULL,
   `gender` int(11) NOT NULL,
-  `avatar` varchar(511) NOT NULL DEFAULT 'https://cdn.thk.ammon.ee/images/default-avatar.png',
+  `avatar` varchar(511) NOT NULL DEFAULT 'https://cdn.thk.ammon.ee/images/default-avatars.png',
   `role` int(11) NOT NULL,
   `description` varchar(511) NOT NULL,
   `motto` varchar(255) NOT NULL,
@@ -117,8 +117,8 @@ CREATE TABLE `discussr_users` (
 --
 
 INSERT INTO `discussr_users` (`sqlid`, `username`, `password`, `email`, `joindate`, `sitelanguage`, `gender`, `avatar`, `role`, `description`, `motto`, `homepage`, `nationality`, `timezone`, `categoriesFollowing`) VALUES
-(2, 'marxt12372', '031d2f72f11f3e0e505642328d6296bf55dca251125a8718fbaadac2a92e69e6', 'mart@ammon.ee', 1526491850, 'en', 1, 'http://www.gravatar.com/avatar/ef6848e47019af378ee4848f4baada26?s=200', 4, '', 'I want my car to whisper performance, not scream it.', 'https://ammon.ee', 'Tallinn', '', '2,3'),
-(3, 'Kasutaja', '0802fe893a02f2ad4609f82f841a9c2a3610a6fc0b1c35d50a848307ce9f8a4c', 'kasutaja@gmail.com', 1527330111, 'en', 0, 'https://cdn.thk.ammon.ee/images/default-avatar.png', 0, '', '', '', '', '', '');
+(2, 'marxt12372', '031d2f72f11f3e0e505642328d6296bf55dca251125a8718fbaadac2a92e69e6', 'mart@ammon.ee', 1526491850, 'en', 1, 'http://www.gravatar.com/avatars/ef6848e47019af378ee4848f4baada26?s=200', 4, '', 'I want my car to whisper performance, not scream it.', 'https://ammon.ee', 'Tallinn', '', '2,3'),
+(3, 'Kasutaja', '0802fe893a02f2ad4609f82f841a9c2a3610a6fc0b1c35d50a848307ce9f8a4c', 'kasutaja@gmail.com', 1527330111, 'en', 0, 'https://cdn.thk.ammon.ee/images/default-avatars.png', 0, '', '', '', '', '', '');
 
 --
 -- Indexes for dumped tables

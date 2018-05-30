@@ -10,6 +10,7 @@ if(!defined('CDN_URL')) define('CDN_URL', '/cdn'); //NO TRAILING SLASH!
 
 if(!defined('SITE_LOCATION')) define('SITE_LOCATION', $_SERVER['DOCUMENT_ROOT'] . SITE_URL);
 
+
 require_once SITE_LOCATION . '/translations/Translator.php';
 global $translator;
 $translator = new Translator($_SESSION['language']);
