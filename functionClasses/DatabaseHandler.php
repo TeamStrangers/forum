@@ -131,4 +131,25 @@ class DatabaseHandler
 		}
 		else return null;
 	}
+
+	static function saveUser($user)
+	{
+		require SITE_LOCATION . '/config.php';
+
+		$fields = '`username` = \'' . $user->getUsername() . '\',';
+		$fields .= '`password` = \'' . $user->getPassword() . '\',';
+		$fields .= '`email` = \'' . $user->getEmail() . '\',';
+		$fields .= '`sitelanguage` = \'' . $user->getSiteLanguage() . '\',';
+		$fields .= '`gender` = \'' . $user->getGender() . '\',';
+		$fields .= '`avatar` = \'' . $user->getAvatar() . '\',';
+		$fields .= '`role` = \'' . $user->getRole() . '\',';
+		$fields .= '`description` = \'' . $user->getDescription() . '\',';
+		$fields .= '`motto` = \'' . $user->getMotto() . '\',';
+		$fields .= '`homepage` = \'' . $user->getHomepage() . '\',';
+		$fields .= '`nationality` = \'' . $user->getNationality() . '\',';
+		$fields .= '`timezone` = \'' . $user->getTimezone() . '\',';
+		$fields .= '`categoriesFollowing` = \'' . $user->getCategoriesFollowing() . '\'';
+
+		self::$connection->query('UPDATE `' . $mysql['dbprefix'] . 'users` SET ' . $fields . ' WHERE `sqlid` = \'' . $user->getSQLID() . '\'');
+	}
 }

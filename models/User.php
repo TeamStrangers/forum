@@ -56,6 +56,11 @@ class User
 		return $this->username;
 	}
 
+	function getGender()
+	{
+		return $this->gender;
+	}
+
 	function getEmail()
 	{
 		return $this->email;
@@ -110,5 +115,25 @@ class User
 	public function getJoindate()
 	{
 		return $this->joindate;
+	}
+
+	public function getDescription()
+	{
+		return $this->description;
+	}
+
+	public function getHomepage()
+	{
+		return $this->homepage;
+	}
+
+	public function getTimezone()
+	{
+		return $this->timezone;
+	}
+
+	public function setPassword($new_pass)
+	{
+		$this->password = $new_pass;
 	}
 }

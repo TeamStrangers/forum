@@ -23,6 +23,8 @@ $language[$lng]['userename'] = 'Username/Email';
 $language[$lng]['email'] = 'Email';
 $language[$lng]['password'] = 'Password';
 $language[$lng]['password2'] = 'Repeat Password';
+$language[$lng]['password3'] = 'New Password';
+$language[$lng]['password4'] = 'Current Password';
 $language[$lng]['passwdmatch'] = 'Passwords aren\'t matching';
 $language[$lng]['menuawelcome'] = 'Welcome, <br>{loginlink} <span style="font-size: 0.8em;">or</span> {registerlink}';
 $language[$lng]['logoutsuccess'] = 'You are now logged out!';
@@ -39,5 +41,9 @@ $language[$lng]['role_vip'] = 'VIP';
 $language[$lng]['role_moderator'] = 'Moderator';
 $language[$lng]['role_administrator'] = 'Administrator';
 $language[$lng]['joined'] = 'Joined:';
+$language[$lng]['change_password'] = 'Change password';
+$language[$lng]['change_email'] = 'Change email';
+$language[$lng]['change_avatar'] = 'Change avatar';
+$language[$lng]['change_profile'] = 'Edit profile';
 
 unset($lng);

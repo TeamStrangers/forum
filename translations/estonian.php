@@ -23,6 +23,8 @@ $language[$lng]['userename'] = 'Kasutajanimi/Email';
 $language[$lng]['email'] = 'Email';
 $language[$lng]['password'] = 'Parool';
 $language[$lng]['password2'] = 'Korda Parool';
+$language[$lng]['password3'] = 'Uus Parool';
+$language[$lng]['password4'] = 'Hetkene Parool';
 $language[$lng]['passwdmatch'] = 'Paroolid ei kattu';
 $language[$lng]['menuawelcome'] = 'Teretulemast, <br>{loginlink} <span style="font-size: 0.8em;">või</span> {registerlink}';
 $language[$lng]['logoutsuccess'] = 'Väljalogimine õnnestus!';
@@ -38,5 +40,9 @@ $language[$lng]['role_vip'] = 'VIP';
 $language[$lng]['role_moderator'] = 'Moderaator';
 $language[$lng]['role_administrator'] = 'Administraator';
 $language[$lng]['joined'] = 'Liitus:';
+$language[$lng]['change_password'] = 'Muuda parooli';
+$language[$lng]['change_email'] = 'Muuda emaili';
+$language[$lng]['change_avatar'] = 'Muuda avatari';
+$language[$lng]['change_profile'] = 'Muuda profiili';
 
 unset($lng);

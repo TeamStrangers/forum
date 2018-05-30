@@ -11,12 +11,22 @@ DatabaseHandler::connect();
 
 $translator = new Translator($_SESSION['language']);
 $page = '';
+$additions = array();
 
-$sqlid = (int) DatabaseHandler::escape_string($_GET['threadid']);
-$thread = DatabaseHandler::getThreadBySQLID($sqlid, true);
+$thread = null;
+if(isset($_GET['threadid']))
+{
+	$sqlid = (int) DatabaseHandler::escape_string($_GET['threadid']);
+	$thread = DatabaseHandler::getThreadBySQLID($sqlid, true);
+}
 
 if($thread != null)
 {
+	$additions['custom_menu'] = array();
+	$additions['custom_menu']['Edit post'] = '';
+	$additions['custom_menu']['Add Reply'] = '';
+	$additions['custom_menu']['Delete Post'] = '';
+
 	define('CUSTOM_TITLE', $translator->getString('title', array('pagename' => htmlspecialchars($thread->getName()))));
 
 	$poster = DatabaseHandler::getUserBySQLID($thread->getCreatedBy());
@@ -30,8 +40,8 @@ if($thread != null)
 	$page .= '<span class="infofield" style="margin: 5px 0;">' . $poster->getRoleTxt() . '</span>';
 	$page .= '<span class="infofield" style="margin: 10px 0; font-size: 0.8em;">' . htmlspecialchars($poster->getNationality()) . '</span>';
 	$page .= '<span class="infofield"><span class="left">' . $translator->getString('joined') . '</span><span class="right">' . date("F j, Y", $poster->getJoindate()) . '</span></span><br>';
-	$page .= '<span class="infofield"><span class="left">Threads posted:</span><span class="right">efgh</span></span><br>';
-	$page .= '<span class="infofield"><span class="left">Posts made:</span><span class="right">efgh</span></span><br>';
+	$page .= '<span class="infofield"><span class="left">Threads posted:</span><span class="right">0</span></span><br>';
+	$page .= '<span class="infofield"><span class="left">Posts made:</span><span class="right">0</span></span><br>';
 	$page .= '</div>';
 
 	$page .= '<div class="content"><span>' . nl2br(htmlspecialchars($thread->getName())) . '</span>' . nl2br(htmlspecialchars($thread->getContent())) . '</div>';
@@ -62,6 +72,6 @@ else
 }
 
 
-PageDrawer::drawPage($page);
+PageDrawer::drawPage($page, $additions);
 
 DatabaseHandler::close();
