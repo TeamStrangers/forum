@@ -19,6 +19,7 @@ if($current_user != null)
 	$additions['custom_menu'][$translator->getString('change_profile')] = '/userCP/usercp.php?page=changeprofile';
 	$additions['custom_menu'][$translator->getString('change_password')] = '/userCP/usercp.php?page=changepw';
 	$additions['custom_menu'][$translator->getString('change_email')] = '/userCP/usercp.php?page=changemail';
+	$additions['custom_menu'][$translator->getString('change_username')] = '/userCP/usercp.php?page=changename';
 	$additions['custom_menu'][$translator->getString('change_avatar')] = '/userCP/usercp.php?page=changeavatar';
 
 	if(isset($_REQUEST['page']))
@@ -56,14 +57,54 @@ if($current_user != null)
 		{
 			if(isset($_POST['new-email']))
 			{
-				$new_email = DatabaseHandler::escape_string($_POST['new-email']);
-				$current_user->setEmail($new_email);
-				DatabaseHandler::saveUser($current_user);
+				$emailFree = true;
+				foreach(DatabaseHandler::getAllUsers() as $user)
+				{
+					if(strcasecmp($user->getEmail(), $email) == 0)
+					{
+						$emailFree = false;
+					}
+				}
+
+				if($emailFree == true)
+				{
+					$new_email = DatabaseHandler::escape_string($_POST['new-email']);
+					$current_user->setEmail($new_email);
+					DatabaseHandler::saveUser($current_user);
+				}
 			}
 			else
 			{
 				$page .= '<form method="POST">';
 				$page .= '<input type="email" name="new-email" placeholder="'.$translator->getString('email2').'" required><br>';
+				$page .= '<input type="submit" value="'.$translator->getString('change_email').'"><br>';
+				$page .= '</form>';
+			}
+		}
+		else if($_REQUEST['page'] == 'changename')
+		{
+			if(isset($_POST['new-username']))
+			{
+				$usernameFree = true;
+				foreach(DatabaseHandler::getAllUsers() as $user)
+				{
+					if(strcasecmp($user->getUsername(), $username) == 0)
+					{
+						$usernameFree = false;
+					}
+				}
+
+				if($usernameFree == true)
+				{
+					$new_username = DatabaseHandler::escape_string($_POST['new-username']);
+					$current_user->setUsername($new_username);
+					DatabaseHandler::saveUser($current_user);
+				}
+			}
+			else
+			{
+				$page .= '<form method="POST">';
+				$page .= '<input type="text" name="new-username" placeholder="'.$translator->getString('username2').'" required><br>';
 				$page .= '<input type="submit" value="'.$translator->getString('change_email').'"><br>';
 				$page .= '</form>';
 			}

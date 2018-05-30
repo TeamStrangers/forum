@@ -4,17 +4,12 @@
     <bookmark url="file://$PROJECT_DIR$/functionClasses/PageDrawer.php" line="142" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0448010a-bcfb-4d9a-a9a6-2af7695e7748" name="Default" comment="Created">
-      <change afterPath="$PROJECT_DIR$/cdn/stylesheets/pages/usercp.css" afterDir="false" />
+    <list default="true" id="0448010a-bcfb-4d9a-a9a6-2af7695e7748" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functionClasses/DatabaseHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/functionClasses/DatabaseHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functionClasses/PageDrawer.php" beforeDir="false" afterPath="$PROJECT_DIR$/functionClasses/PageDrawer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/translations/english.php" beforeDir="false" afterPath="$PROJECT_DIR$/translations/english.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/translations/estonian.php" beforeDir="false" afterPath="$PROJECT_DIR$/translations/estonian.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userCP/usercp.php" beforeDir="false" afterPath="$PROJECT_DIR$/userCP/usercp.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view_thread.php" beforeDir="false" afterPath="$PROJECT_DIR$/view_thread.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DatabaseHandler.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DatabaseHandler.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/functionClasses/DatabaseHandler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="142" column="60" selection-start-line="142" selection-start-column="60" selection-end-line="142" selection-end-column="60" />
+            <state relative-caret-position="2100">
+              <caret line="140" column="45" selection-start-line="140" selection-start-column="45" selection-end-line="140" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -54,17 +49,17 @@
       <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="131" column="31" selection-start-line="131" selection-start-column="31" selection-end-line="131" selection-end-column="31" />
+            <state relative-caret-position="516">
+              <caret line="146" column="40" selection-start-line="146" selection-start-column="40" selection-end-line="146" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="usercp.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="usercp.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/userCP/usercp.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="40" column="33" lean-forward="true" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+            <state relative-caret-position="576">
+              <caret line="95" column="16" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -77,8 +72,8 @@
       <file leaf-file-name="estonian.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/translations/estonian.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="42" column="32" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="32" />
+            <state relative-caret-position="456">
+              <caret line="48" column="56" selection-start-line="48" selection-start-column="56" selection-end-line="48" selection-end-column="56" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
               </folding>
@@ -89,8 +84,8 @@
       <file leaf-file-name="english.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/translations/english.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="25" column="45" lean-forward="true" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
+            <state relative-caret-position="456">
+              <caret line="49" column="53" selection-start-line="49" selection-start-column="53" selection-end-line="49" selection-end-column="53" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
               </folding>
@@ -157,12 +152,12 @@
         <option value="$PROJECT_DIR$/config.php" />
         <option value="$PROJECT_DIR$/view_thread.php" />
         <option value="$PROJECT_DIR$/functionClasses/PageDrawer.php" />
+        <option value="$PROJECT_DIR$/cdn/stylesheets/pages/usercp.css" />
+        <option value="$PROJECT_DIR$/functionClasses/DatabaseHandler.php" />
         <option value="$PROJECT_DIR$/translations/estonian.php" />
         <option value="$PROJECT_DIR$/translations/english.php" />
-        <option value="$PROJECT_DIR$/cdn/stylesheets/pages/usercp.css" />
-        <option value="$PROJECT_DIR$/userCP/usercp.php" />
         <option value="$PROJECT_DIR$/models/User.php" />
-        <option value="$PROJECT_DIR$/functionClasses/DatabaseHandler.php" />
+        <option value="$PROJECT_DIR$/userCP/usercp.php" />
       </list>
     </option>
   </component>
@@ -272,7 +267,7 @@
       <workItem from="1526978151829" duration="16921000" />
       <workItem from="1527064008891" duration="14961000" />
       <workItem from="1527325868830" duration="23496000" />
-      <workItem from="1527664196258" duration="3318000" />
+      <workItem from="1527664196258" duration="4458000" />
     </task>
     <task id="LOCAL-00001" summary="Added language selection, alertboxes, fixed phps require location mess.">
       <created>1526480149232</created>
@@ -295,11 +290,25 @@
       <option name="project" value="LOCAL" />
       <updated>1526505089256</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Per page menus. Changepassword">
+      <created>1527667733034</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1527667733035</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Change email">
+      <created>1527668345556</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1527668345556</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109004000" />
+    <option name="totallyTimeSpent" value="110144000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
@@ -337,7 +346,9 @@
     <MESSAGE value="Added language selection, alertboxes, fixed phps require location mess." />
     <MESSAGE value="Worked on the login window, added database export." />
     <MESSAGE value="Main menu user links." />
-    <option name="LAST_COMMIT_MESSAGE" value="Main menu user links." />
+    <MESSAGE value="Per page menus. Changepassword" />
+    <MESSAGE value="Change email" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change email" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -493,13 +504,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eventHandler/do_register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1065">
-          <caret line="71" column="31" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/translations/Translator.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -598,42 +602,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view_thread.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="27" column="48" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="24" column="27" lean-forward="true" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/translations/english.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="25" column="45" lean-forward="true" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/translations/estonian.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="42" column="32" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="32" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -659,27 +631,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="131" column="31" selection-start-line="131" selection-start-column="31" selection-end-line="131" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cdn/stylesheets/pages/usercp.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/userCP/usercp.php">
+    <entry file="file://$PROJECT_DIR$/view_thread.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="40" column="33" lean-forward="true" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+        <state relative-caret-position="126">
+          <caret line="27" column="48" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/translations/estonian.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="48" column="56" selection-start-line="48" selection-start-column="56" selection-end-line="48" selection-end-column="56" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/translations/english.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="49" column="53" selection-start-line="49" selection-start-column="53" selection-end-line="49" selection-end-column="53" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="146" column="40" selection-start-line="146" selection-start-column="40" selection-end-line="146" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventHandler/do_register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="38" column="5" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="38" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/functionClasses/DatabaseHandler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="142" column="60" selection-start-line="142" selection-start-column="60" selection-end-line="142" selection-end-column="60" />
+        <state relative-caret-position="2100">
+          <caret line="140" column="45" selection-start-line="140" selection-start-column="45" selection-end-line="140" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userCP/usercp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="95" column="16" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="16" />
         </state>
       </provider>
     </entry>

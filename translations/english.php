@@ -19,6 +19,7 @@ $language[$lng]['warning'] = 'Warning';
 $language[$lng]['login'] = 'Log In';
 $language[$lng]['register'] = 'Register';
 $language[$lng]['username'] = 'Username';
+$language[$lng]['username2'] = 'New Username';
 $language[$lng]['userename'] = 'Username/Email';
 $language[$lng]['email'] = 'Email';
 $language[$lng]['email2'] = 'New Email';
@@ -46,5 +47,6 @@ $language[$lng]['change_password'] = 'Change password';
 $language[$lng]['change_email'] = 'Change email';
 $language[$lng]['change_avatar'] = 'Change avatar';
 $language[$lng]['change_profile'] = 'Edit profile';
+$language[$lng]['change_username'] = 'Change username';
 
 unset($lng);

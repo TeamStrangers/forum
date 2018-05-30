@@ -141,4 +141,9 @@ class User
 	{
 		$this->email = $new_email;
 	}
+
+	public function setUsername($new_username)
+	{
+		$this->username = $new_username;
+	}
 }

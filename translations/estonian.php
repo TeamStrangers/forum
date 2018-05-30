@@ -19,6 +19,7 @@ $language[$lng]['warning'] = 'Hoiatus';
 $language[$lng]['login'] = 'Logi Sisse';
 $language[$lng]['register'] = 'Registreeru';
 $language[$lng]['username'] = 'Kasutajanimi';
+$language[$lng]['username2'] = 'Uus kasutajanimi';
 $language[$lng]['userename'] = 'Kasutajanimi/Email';
 $language[$lng]['email'] = 'Email';
 $language[$lng]['email2'] = 'Uus Email';
@@ -45,5 +46,6 @@ $language[$lng]['change_password'] = 'Muuda parooli';
 $language[$lng]['change_email'] = 'Muuda emaili';
 $language[$lng]['change_avatar'] = 'Muuda avatari';
 $language[$lng]['change_profile'] = 'Muuda profiili';
+$language[$lng]['change_username'] = 'Muuda kasutajanime';
 
 unset($lng);
