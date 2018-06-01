@@ -1,0 +1,108 @@
+.container
+{
+	position: relative;
+	border: 1px solid #ebebeb;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 15px;
+}
+
+.container:first-child
+{
+	min-height: 230px;
+}
+
+.container #mainInfoLeft
+{
+	position: relative;
+	float: left;
+	width: 200px;
+	height: 200px;
+}
+
+.container #mainInfoRight
+{
+	width: calc(100% - 200px);
+	min-height: 200px;
+	margin-left: 200px;
+}
+
+.container #mainInfoRight p
+{
+	margin: 0;
+}
+
+.container #mainInfoRight span
+{
+	float: right;
+	font-size: 0.8em;
+}
+
+.container .title
+{
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+
+/*.avatar{
+    border:1px solid black;
+	height:20%;
+	margin-right:0.25%;
+	float: left;
+}
+
+#username{
+	line-height:1rem;
+}
+
+#username,#role{
+	margin:0;
+	padding:0;
+}
+
+#role{
+    font-size: 12px;
+}
+
+.UpperSection{
+	width:100%;
+	border:1px solid black;
+	overflow:auto;
+}
+
+
+.MainSection{
+	flex-direction: column;
+	border:1px solid black;
+	clear:both;
+}
+
+.Wrap{
+	display:block;
+}
+
+#motto{
+	margin:0;
+}
+
+#Status h4{
+	margin:0;
+	padding:0;
+	display:flex;
+}
+
+#blaaaa
+{
+	margin-top: 7.5em;
+}
+
+.UpperSectionRightStart
+{
+	height: 2em;
+}
+
+.UpperSectionRightEnd
+{
+	height: 200%;
+}*/

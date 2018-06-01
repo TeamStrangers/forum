@@ -59,5 +59,6 @@ $language[$lng]['changeprofile_motto'] = 'Motto';
 $language[$lng]['changeprofile_homepage'] = 'Homepage';
 $language[$lng]['changeprofile_nationality'] = 'Nationality';
 $language[$lng]['changeprofile_timezone'] = 'Timezone';
+$language[$lng]['aboutme'] = 'About Me';
 
 unset($lng);

@@ -58,5 +58,6 @@ $language[$lng]['changeprofile_motto'] = 'Motto';
 $language[$lng]['changeprofile_homepage'] = 'Koduleht profiil';
 $language[$lng]['changeprofile_nationality'] = 'Asukoht';
 $language[$lng]['changeprofile_timezone'] = 'Ajatsoon';
+$language[$lng]['aboutme'] = 'Minust';
 
 unset($lng);
