@@ -13,11 +13,19 @@ $("#mainMenuLanguage img").on("click", function() {
 });
 
 $("#loginWindow .background").on("click", function() {
-	if(loginWindowShown == true)
-	{
-		loginWindowShown = false;
-		document.getElementById('loginWindow').style.display = "none";
-	}
+    if(loginWindowShown == true)
+    {
+        loginWindowShown = false;
+        document.getElementById('loginWindow').style.display = "none";
+    }
+});
+
+$("#loginWindow #loginWindowCloseBtn").on("click", function() {
+    if(loginWindowShown == true)
+    {
+        loginWindowShown = false;
+        document.getElementById('loginWindow').style.display = "none";
+    }
 });
 
 $(document).on("keyup", function(event) {

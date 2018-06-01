@@ -103,8 +103,9 @@ class PageDrawer
 			if($current_user == null)
 			{
 				echo '<div id="loginWindow"><div class="background"></div><div class="container">';
-				echo '<div id="loginwindowtabs"><span id="loginwindowlefttab" onclick="selectLoginWindowTab(0)">'.$translator->getString('login').'</span><span id="loginwindowrighttab" onclick="selectLoginWindowTab(1)">'.$translator->getString('register').'</span></div>';
+				echo '<span id="loginWindowCloseBtn">&times;</span>';
 				//Login tab content
+				echo '<div id="loginWindowTabContent">';
 				echo '<div id="loginwindowtabcontent_login" style="display: none;">';
 				echo '<form method="POST" action="'.SITE_URL.'/eventHandler/do_login.php"><input type="text" name="username" placeholder="'.$translator->getString('userename').'"><br><input type="password" name="password" placeholder="'.$translator->getString('password').'"><input type="hidden" name="fromsite" id="fromsite"><br><input type="submit" value="'.$translator->getString('login').'"></form>';
 				echo '</div>';
@@ -112,6 +113,9 @@ class PageDrawer
 				echo '<div id="loginwindowtabcontent_register" style="display: none;">';
 				echo '<form method="POST" action="'.SITE_URL.'/eventHandler/do_register.php"><input type="text" name="username" placeholder="'.$translator->getString('username').'"><br><input type="email" name="email" placeholder="'.$translator->getString('email').'"><br><input type="password" name="password" placeholder="'.$translator->getString('password').'"><br><input type="password" name="password2" placeholder="'.$translator->getString('password2').'"><input type="hidden" name="fromsite" id="fromsite2"><br><input type="submit" value="'.$translator->getString('register').'"></form>';
 				echo '</div>';
+				echo '</div>';
+				//Tabs
+				echo '<div id="loginwindowtabs"><span id="loginwindowlefttab" onclick="selectLoginWindowTab(0)">'.$translator->getString('login').'</span><span id="loginwindowrighttab" onclick="selectLoginWindowTab(1)">'.$translator->getString('register').'</span></div>';
 				echo '</div></div>';
 			}
 
