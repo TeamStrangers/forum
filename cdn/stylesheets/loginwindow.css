@@ -121,3 +121,9 @@
 	background-color: #cccccc;
 	color: #036d00;
 }
+
+#loginWindow .errorMsg
+{
+	color: red;
+	font-weight: bold;
+}

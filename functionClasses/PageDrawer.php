@@ -111,37 +111,13 @@ class PageDrawer
 				echo '</div>';
 				//Register tab content
 				echo '<div id="loginwindowtabcontent_register" style="display: none;">';
-				echo '<form method="POST" action="'.SITE_URL.'/eventHandler/do_register.php"><input type="text" name="username" placeholder="'.$translator->getString('username').'"><br><input type="email" name="email" placeholder="'.$translator->getString('email').'"><br><input type="password" name="password" placeholder="'.$translator->getString('password').'"><br><input type="password" name="password2" placeholder="'.$translator->getString('password2').'"><input type="hidden" name="fromsite" id="fromsite2"><br><input type="submit" value="'.$translator->getString('register').'"></form>';
+				echo '<form method="POST" action="'.SITE_URL.'/eventHandler/do_register.php" data-validator="' . SITE_URL . '/eventHandler/check_userStatus.php"><input type="text" name="username" placeholder="'.$translator->getString('username').'"><br><input type="email" name="email" placeholder="'.$translator->getString('email').'"><br><input type="password" name="password" placeholder="'.$translator->getString('password').'"><br><input type="password" name="password2" placeholder="'.$translator->getString('password2').'"><input type="hidden" name="fromsite" id="fromsite2"><br><input type="submit" value="'.$translator->getString('register').'"><br><span class="errorMsg" id="registerErrorMessage1"></span><br><span class="errorMsg" id="registerErrorMessage2"></span></form>';
 				echo '</div>';
 				echo '</div>';
 				//Tabs
 				echo '<div id="loginwindowtabs"><span id="loginwindowlefttab" onclick="selectLoginWindowTab(0)">'.$translator->getString('login').'</span><span id="loginwindowrighttab" onclick="selectLoginWindowTab(1)">'.$translator->getString('register').'</span></div>';
 				echo '</div></div>';
 			}
-
-			// Draw the alertbox stuff TODO: Remove the dammn alertboxes one day!
-			echo '<div id="alertboxes">';
-			if(isset($_GET['msg']) && !empty($_GET['msg']) && is_array($_GET['msg']) && array_key_exists(0, $_GET['msg']) && array_key_exists(1, $_GET['msg']))
-			{
-				$msg = $_GET['msg'];
-				if($msg[0] == 'error')
-				{
-					echo '<div class="alertbox alertbox-red"><span onclick="this.parentElement.style.display=\'none\'">&times;</span><h2>'.$translator->getString('error').'</h2><p>'.$msg[1].'</p></div>';
-				} else
-				{
-					if($msg[0] == 'warn')
-					{
-						echo '<div class="alertbox alertbox-yellow"><span onclick="this.parentElement.style.display=\'none\'">&times;</span><h2>'.$translator->getString('warning').'</h2><p>'.$msg[1].'</p></div>';
-					} else
-					{
-						if($msg[0] == 'success')
-						{
-							echo '<div class="alertbox alertbox-green"><span onclick="this.parentElement.style.display=\'none\'">&times;</span><h2>'.$translator->getString('success').'</h2><p>'.$msg[1].'</p></div>';
-						}
-					}
-				}
-			}
-			echo '</div>';
 
 			//Draw the main body form the page
 			echo '<div id="sidebar">';
@@ -158,14 +134,17 @@ class PageDrawer
 			{
 				if(is_array($additions))
 				{
-					if(array_key_exists('custom_menu', $additions))
+					for($i = 0; $i <= 10; $i++)
 					{
-						echo '<ul>';
-						foreach($additions['custom_menu'] as $name => $url)
+						if(array_key_exists('custom_menu' . $i, $additions))
 						{
-							echo '<li><a href="'.SITE_URL.$url.'">'.$name.'</a></li>';
+							echo '<ul>';
+							foreach ($additions['custom_menu' . $i] as $name => $url)
+							{
+								echo '<li><a href="' . SITE_URL . $url . '">' . $name . '</a></li>';
+							}
+							echo '</ul>';
 						}
-						echo '</ul>';
 					}
 				}
 			}

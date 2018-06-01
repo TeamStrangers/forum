@@ -45,27 +45,27 @@ if($values_set == true && $current_user == null)
 			if(strcasecmp($password, $password2) == 0)
 			{
 				$_SESSION['sqlid'] = DatabaseHandler::createUser($username, $email, $password);
-				header("Location: " . $fromsite . "?msg[0]=success&msg[1]=" . $translator->getString('usercreated'));
+				header("Location: " . $fromsite);
 				DatabaseHandler::close();
 				exit();
 			}
 			else
 			{
-				header("Location: " . $fromsite . "?msg[0]=error&msg[1]=" . $translator->getString('passwdmatch'));
+				header("Location: " . $fromsite);
 				DatabaseHandler::close();
 				exit();
 			}
 		}
 		else
 		{
-			header("Location: " . $fromsite . "?msg[0]=error&msg[1]=" . $translator->getString('emailtaken'));
+			header("Location: " . $fromsite);
 			DatabaseHandler::close();
 			exit();
 		}
 	}
 	else
 	{
-		header("Location: " . $fromsite . "?msg[0]=error&msg[1]=" . $translator->getString('usernametaken'));
+		header("Location: " . $fromsite);
 		DatabaseHandler::close();
 		exit();
 	}
@@ -74,4 +74,4 @@ if($values_set == true && $current_user == null)
 
 DatabaseHandler::close();
 
-header("Location: " . $fromsite . "?msg[0]=error&msg[1]=" . $translator->getString('unexpectederror'));
+header("Location: " . $fromsite);

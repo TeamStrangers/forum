@@ -30,13 +30,13 @@ if($values_set == true && $current_user == null)
 			{
 				$_SESSION['sqlid'] = $user->getSQLID();
 				$_SESSION['language'] = $user->getSiteLanguage();
-				header("Location: " . $fromsite . "?msg[0]=success&msg[1]=" . $translator->getString('loginsuccess', array('username' => $user->getUsername())));
+				header("Location: " . $fromsite);
 				DatabaseHandler::close();
 				exit();
 			}
 			else
 			{
-				header("Location: " . $fromsite . "?msg[0]=error&msg[1]=" . $translator->getString('incorrectpass'));
+				header("Location: " . $fromsite);
 				DatabaseHandler::close();
 				exit();
 			}
@@ -45,7 +45,7 @@ if($values_set == true && $current_user == null)
 	}
 	if($user_found == false)
 	{
-		header("Location: " . $fromsite . "?msg[0]=error&msg[1]=" . $translator->getString('incorrectpass'));
+		header("Location: " . $fromsite);
 		DatabaseHandler::close();
 		exit();
 	}
@@ -53,4 +53,4 @@ if($values_set == true && $current_user == null)
 
 DatabaseHandler::close();
 
-header("Location: " . $fromsite . "?msg[0]=error&msg[1]=" . $translator->getString('unexpectederror'));
+header("Location: " . $fromsite);

@@ -109,6 +109,19 @@ class DatabaseHandler
 		return $list;
 	}
 
+	static function getBaseCategories()
+	{
+		require SITE_LOCATION . '/config.php';
+		$list = array();
+		$query = self::$connection->query('SELECT * FROM `' . $mysql['dbprefix'] . 'categories` WHERE `parent` IS NULL OR `parent` = \'0\'');
+		while($row = $query->fetch_assoc())
+		{
+			$categorie = new Categorie($row);
+			array_push($list, $categorie);
+		}
+		return $list;
+	}
+
 	static function getThreadBySQLID($sqlid, $withPosts = false)
 	{
 		require SITE_LOCATION . '/config.php';

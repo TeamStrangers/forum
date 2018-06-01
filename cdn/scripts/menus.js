@@ -28,6 +28,37 @@ $("#loginWindow #loginWindowCloseBtn").on("click", function() {
     }
 });
 
+$("#loginwindowtabcontent_register input[type=text]").on("keyup", function() {
+	var url = $(this).parent().attr('data-validator') + "?checkWhat=usernameFree&toCheck=" + $(this).val();
+    var options = {url: url, type: "GET"};
+    $.ajax(options).done(function(data) {
+		if(data['free'] == 'false')
+		{
+			//alert(data['errormsg']);
+            document.getElementById('registerErrorMessage1').innerText = data['errormsg'];
+		}
+		else
+		{
+            document.getElementById('registerErrorMessage1').innerText = '';
+		}
+	});
+});
+
+$("#loginwindowtabcontent_register input[type=email]").on("keyup", function() {
+    var url = $(this).parent().attr('data-validator') + "?checkWhat=emailFree&toCheck=" + $(this).val();
+    var options = {url: url, type: "GET"};
+    $.ajax(options).done(function(data) {
+        if(data['free'] == 'false')
+        {
+            document.getElementById('registerErrorMessage2').innerText = data['errormsg'];
+        }
+        else
+        {
+            document.getElementById('registerErrorMessage2').innerText = '';
+        }
+    });
+});
+
 $(document).on("keyup", function(event) {
 	if(event.which == 27)
 	{

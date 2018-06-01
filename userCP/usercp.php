@@ -15,12 +15,12 @@ $additions = array();
 
 if($current_user != null)
 {
-	$additions['custom_menu'] = array();
-	$additions['custom_menu'][$translator->getString('change_profile')] = '/userCP/usercp.php?page=changeprofile';
-	$additions['custom_menu'][$translator->getString('change_password')] = '/userCP/usercp.php?page=changepw';
-	$additions['custom_menu'][$translator->getString('change_email')] = '/userCP/usercp.php?page=changemail';
-	$additions['custom_menu'][$translator->getString('change_username')] = '/userCP/usercp.php?page=changename';
-	$additions['custom_menu'][$translator->getString('change_avatar')] = '/userCP/usercp.php?page=changeavatar';
+	$additions['custom_menu0'] = array();
+	$additions['custom_menu0'][$translator->getString('change_profile')] = '/userCP/usercp.php?page=changeprofile';
+	$additions['custom_menu0'][$translator->getString('change_password')] = '/userCP/usercp.php?page=changepw';
+	$additions['custom_menu0'][$translator->getString('change_email')] = '/userCP/usercp.php?page=changemail';
+	$additions['custom_menu0'][$translator->getString('change_username')] = '/userCP/usercp.php?page=changename';
+	$additions['custom_menu0'][$translator->getString('change_avatar')] = '/userCP/usercp.php?page=changeavatar';
 
 	if(isset($_REQUEST['page']))
 	{
@@ -47,8 +47,8 @@ if($current_user != null)
 				$page .= '<option value="1"' . ($current_user->getGender()==1?' selected':'') . '>' . $translator->getString('changeprofile_gender1') . '</option>';
 				$page .= '<option value="2"' . ($current_user->getGender()==2?' selected':'') . '>' . $translator->getString('changeprofile_gender2') . '</option>';
 				$page .= '</select><br>';
-				$page .= '<input type="text" name="description" placeholder="'.$translator->getString('changeprofile_description').'" value="' . $current_user->getDescription() . '"><br>';
-				$page .= '<input type="text" name="motto" placeholder="'.$translator->getString('changeprofile_motto').'" value="' . $current_user->getMotto() . '"><br>';
+				$page .= '<textarea name="description" placeholder="'.$translator->getString('changeprofile_description').'">' . $current_user->getDescription() . '</textarea><br>';
+				$page .= '<textarea name="motto" placeholder="'.$translator->getString('changeprofile_motto').'">' . $current_user->getMotto() . '</textarea><br>';
 				$page .= '<input type="text" name="homepage" placeholder="'.$translator->getString('changeprofile_homepage').'" value="' . $current_user->getHomepage() . '"><br>';
 				$page .= '<input type="text" name="nationality" placeholder="'.$translator->getString('changeprofile_nationality').'" value="' . $current_user->getNationality() . '"><br>';
 				$page .= '<input type="text" name="timezone" placeholder="'.$translator->getString('changeprofile_timezone').'" value="' . $current_user->getTimezone() . '"><br>';
@@ -136,7 +136,7 @@ if($current_user != null)
 			{
 				$page .= '<form method="POST">';
 				$page .= '<input type="text" name="new-username" placeholder="'.$translator->getString('username2').'" required><br>';
-				$page .= '<input type="submit" value="'.$translator->getString('change_email').'"><br>';
+				$page .= '<input type="submit" value="'.$translator->getString('change_username').'"><br>';
 				$page .= '</form>';
 			}
 		}

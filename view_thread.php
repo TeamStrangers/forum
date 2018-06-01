@@ -22,10 +22,10 @@ if(isset($_GET['threadid']))
 
 if($thread != null)
 {
-	$additions['custom_menu'] = array();
-	$additions['custom_menu']['Edit post'] = '';
-	$additions['custom_menu']['Add Reply'] = '';
-	$additions['custom_menu']['Delete Post'] = '';
+	$additions['custom_menu0'] = array();
+	$additions['custom_menu0']['Edit post'] = '';
+	$additions['custom_menu0']['Add Reply'] = '';
+	$additions['custom_menu0']['Delete Post'] = '';
 
 	define('CUSTOM_TITLE', $translator->getString('title', array('pagename' => htmlspecialchars($thread->getName()))));
 

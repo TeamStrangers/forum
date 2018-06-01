@@ -6,7 +6,6 @@ class Categorie
 	private $sqlid;
 	private $parent;
 	private $name;
-	private $agelimit;
 	private $threads;
 
 	function __construct($dbRow)
@@ -14,7 +13,6 @@ class Categorie
 		$this->sqlid = (int) $dbRow['sqlid'];
 		$this->parent = $dbRow['parent'];
 		$this->name = $dbRow['name'];
-		$this->agelimit = $dbRow['agelimit'];
 	}
 
 	function setThreads($threads)
@@ -42,8 +40,4 @@ class Categorie
 		return $this->name;
 	}
 
-	function getAgeLimit()
-	{
-		return $this->agelimit;
-	}
 }

@@ -18,18 +18,11 @@ global $current_user;
 
 if($current_user != null)
 {
-	$followingCategories = DatabaseHandler::getCategoriesByList($current_user->getCategoriesFollowing());
-	$page .= '<table>';
-	$page .= '<tr>';
-	$page .= '<th>Kategooria nimi</th>';
-	$page .= '</tr>';
-	foreach($followingCategories as $category)
+	$categories = DatabaseHandler::getBaseCategories();
+	foreach($categories as $category)
 	{
-		$page .= '<tr>';
-		$page .= '<td>' . $category->getName() . '</td>';
-		$page .= '</tr>';
+		$page .= $category->getName() . '<br>';
 	}
-	$page .= '</table>';
 }
 else
 {
