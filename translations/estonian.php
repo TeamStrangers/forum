@@ -4,6 +4,7 @@ $lng = 'et';
 
 $language[$lng]['languagename'] = 'Eesti keel';
 $language[$lng]['title'] = '{pagename} | Discussr';
+$language[$lng]['title2'] = 'Discussr';
 $language[$lng]['title_home'] = 'Avaleht';
 $language[$lng]['title_trending'] = 'Kõige populaarsem';
 $language[$lng]['title_mostrecent'] = 'Kõige uuem';
@@ -63,7 +64,18 @@ $language[$lng]['gender0']='Defineerimata';
 $language[$lng]['gender1']='Mees';
 $language[$lng]['gender2']='Naine';
 $language[$lng]['subcategories'] = 'Alamkategooriad';
-$language[$lng]['threads1'] = 'teema';
-$language[$lng]['threads2'] = 'teemat';
+$language[$lng]['threads1'] = '{threadcount} teema';
+$language[$lng]['threads2'] = '{threadcount} teemat';
+$language[$lng]['threads3'] = 'Teemad';
+$language[$lng]['threads4'] = 'Teemasi pole';
+$language[$lng]['postedby'] = '{poster} poolt';
+$language[$lng]['replycount1'] = '{count} vastus';
+$language[$lng]['replycount2'] = '{count} vastust';
+$language[$lng]['threads_posted'] = 'Teemasi postitanud:';
+$language[$lng]['posts_posted'] = 'Postitusi teinud:';
+$language[$lng]['post_control_new'] = 'Uus teema';
+$language[$lng]['post_control_edit'] = 'Muuda postitust';
+$language[$lng]['post_control_reply'] = 'Vasta postitusele';
+$language[$lng]['post_control_delete'] = 'Kustuta postitus';
 
 unset($lng);

@@ -9,7 +9,7 @@ require 'config.php';
 
 DatabaseHandler::connect();
 
-$translator = new Translator($_SESSION['language']);
+global $translator;
 $page = '';
 $additions = array();
 
@@ -23,14 +23,16 @@ if(isset($_GET['threadid']))
 if($thread != null)
 {
 	$additions['custom_menu0'] = array();
-	$additions['custom_menu0']['Edit post'] = '';
-	$additions['custom_menu0']['Add Reply'] = '';
-	$additions['custom_menu0']['Delete Post'] = '';
+	$additions['custom_menu0'][$translator->getString('post_control_edit')] = '/edit_thread.php?action=edit&threadid=' . $thread->getSQLID();
+	$additions['custom_menu0'][$translator->getString('post_control_reply')] = '/new_thread.php?action=reply&subid=' . $thread->getSQLID();
+	$additions['custom_menu0'][$translator->getString('post_control_delete')] = '/edit_thread.php?action=delete&threadid=' . $thread->getSQLID();
 
 	define('CUSTOM_TITLE', $translator->getString('title', array('pagename' => htmlspecialchars($thread->getName()))));
 
 	$poster = DatabaseHandler::getUserBySQLID($thread->getCreatedBy());
 	if($poster == null) { $poster = new User(null); }
+
+	$page .= '<div class="categoryTree">' . CategoryManager::generateCategoryTree(DatabaseHandler::getThreadCategory($thread), $thread) . '</div>';
 
 	$page .= '<div id="mainThread">';
 
@@ -40,8 +42,8 @@ if($thread != null)
 	$page .= '<span class="infofield" style="margin: 5px 0;">' . $poster->getRoleTxt() . '</span>';
 	$page .= '<span class="infofield" style="margin: 10px 0; font-size: 0.8em;">' . htmlspecialchars($poster->getNationality()) . '</span>';
 	$page .= '<span class="infofield"><span class="left">' . $translator->getString('joined') . '</span><span class="right">' . date("F j, Y", $poster->getJoindate()) . '</span></span><br>';
-	$page .= '<span class="infofield"><span class="left">Threads posted:</span><span class="right">0</span></span><br>';
-	$page .= '<span class="infofield"><span class="left">Posts made:</span><span class="right">0</span></span><br>';
+	$page .= '<span class="infofield"><span class="left">' . $translator->getString('threads_posted') . '</span><span class="right">' . count(DatabaseHandler::getThreadsByUser($poster)) . '</span></span><br>';
+	$page .= '<span class="infofield"><span class="left">' . $translator->getString('posts_posted') . '</span><span class="right">' . count(DatabaseHandler::getPostsByUser($poster)) . '</span></span><br>';
 	$page .= '</div>';
 
 	$page .= '<div class="content"><span>' . nl2br(htmlspecialchars($thread->getName())) . '</span>' . nl2br(htmlspecialchars($thread->getContent())) . '</div>';

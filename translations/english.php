@@ -4,6 +4,7 @@ $lng = 'en';
 
 $language[$lng]['languagename'] = 'English';
 $language[$lng]['title'] = '{pagename} | Discussr';
+$language[$lng]['title2'] = 'Discussr';
 $language[$lng]['title_home'] = 'Home';
 $language[$lng]['title_trending'] = 'Popular';
 $language[$lng]['title_mostrecent'] = 'Most Recent';
@@ -64,7 +65,18 @@ $language[$lng]['gender0']='Undefined';
 $language[$lng]['gender1']='Male';
 $language[$lng]['gender2']='Female';
 $language[$lng]['subcategories'] = 'Sub categories';
-$language[$lng]['threads1'] = 'thread';
-$language[$lng]['threads2'] = 'threads';
+$language[$lng]['threads1'] = '{threadcount} thread';
+$language[$lng]['threads2'] = '{threadcount} threads';
+$language[$lng]['threads3'] = 'Threads';
+$language[$lng]['threads4'] = 'No threads';
+$language[$lng]['postedby'] = 'by {poster}';
+$language[$lng]['replycount1'] = '{count} reply';
+$language[$lng]['replycount2'] = '{count} replies';
+$language[$lng]['threads_posted'] = 'Threads posted:';
+$language[$lng]['posts_posted'] = 'Posts made:';
+$language[$lng]['post_control_new'] = 'New thread';
+$language[$lng]['post_control_edit'] = 'Edit post';
+$language[$lng]['post_control_reply'] = 'Add Reply';
+$language[$lng]['post_control_delete'] = 'Delete post';
 
 unset($lng);

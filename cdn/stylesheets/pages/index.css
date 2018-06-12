@@ -2,7 +2,7 @@
 {
 	width: 100%;
 	margin-bottom: 15px;
-	border: 1px solid #ebebeb;
+	border: 1px solid #cdcdcd;
 }
 
 .basecategory > .title
@@ -18,7 +18,7 @@
 
 .basecategory > .container > .category
 {
-	border-top: 1px solid #ebebeb;
+	border-top: 1px solid #cdcdcd;
 	transition: background-color 0.1s, color 0.1s;
 	display: block;
 	color: black;
@@ -26,7 +26,7 @@
 
 .basecategory > .container > .category:hover
 {
-	background-color: #ebebeb;
+	background-color: #cdcdcd;
 	color: #036d00;
 }
 

@@ -131,6 +131,44 @@ class DatabaseHandler
 		else return self::$categories;
 	}
 
+	static function getThreadCategory($thread)
+	{
+		foreach(DatabaseHandler::getCategories() as $category)
+		{
+			if($thread->getCategorie() == $category->getSQLID())
+			{
+				return $category;
+			}
+		}
+		return null;
+	}
+
+	static function getThreadsByUser($user)
+	{
+		$list = array();
+		foreach(DatabaseHandler::getThreads() as $thread)
+		{
+			if($thread->getCreatedBy() == $user->getSQLID())
+			{
+				array_push($list, $thread);
+			}
+		}
+		return $list;
+	}
+
+	static function getPostsByUser($user)
+	{
+		$list = array();
+		foreach(DatabaseHandler::getPosts() as $post)
+		{
+			if($post->getCreatedBy() == $user->getSQLID())
+			{
+				array_push($list, $post);
+			}
+		}
+		return $list;
+	}
+
 	static function getThreads()
 	{
 		require SITE_LOCATION . '/config.php';
@@ -149,6 +187,30 @@ class DatabaseHandler
 		else return self::$threads;
 	}
 
+	static function getThreadsByCategory($category, $withPosts = false)
+	{
+		require SITE_LOCATION . '/config.php';
+		$list = array();
+		$query = self::$connection->query('SELECT * FROM `' . $mysql['dbprefix'] . 'threads` WHERE `categorie` = \'' . $category . '\'');
+		while($row = $query->fetch_assoc())
+		{
+			$thread = new Thread($row);
+			if($withPosts)
+			{
+				$posts = array();
+				$query3 = self::$connection->query('SELECT * FROM `' . $mysql['dbprefix'] . 'posts` WHERE `thread` = \'' . $thread->getSQLID() . '\'');
+				while($row3 = $query3->fetch_assoc())
+				{
+					$post = new Post($row3);
+					array_push($posts, $post);
+				}
+				$thread->setPosts($posts);
+			}
+			array_push($list, $thread);
+		}
+		return $list;
+	}
+
 	static function getPosts()
 	{
 		require SITE_LOCATION . '/config.php';
@@ -158,7 +220,7 @@ class DatabaseHandler
 			$query = self::$connection->query('SELECT * FROM `' . $mysql['dbprefix'] . 'posts`');
 			while($row = $query->fetch_assoc())
 			{
-				$thread = new Thread($row);
+				$thread = new Post($row);
 				array_push($list, $thread);
 			}
 			self::$posts = $list;

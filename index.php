@@ -30,8 +30,8 @@ foreach($categories as $category)
 				$page .= '<div class="title">' . $subcateroy->getName() . '</div>';
 				$page .= '<div class="categorystats">';
 				$threads = CategoryManager::countThreads($subcateroy);
-				if($threads == 1) $page .= '<div class="left">' . $threads . ' ' . $translator->getString('threads1') . '</div>';
-				else $page .= '<div class="left">' . $threads . ' ' . $translator->getString('threads2') . '</div>';
+				if($threads == 1) $page .= '<div class="left">' . $translator->getString('threads1', array("threadcount" => $threads)) . '</div>';
+				else $page .= '<div class="left">' . $translator->getString('threads2', array("threadcount" => $threads)) . '</div>';
 				//$page .= '<div class="right">' . CategoryManager::countPosts($subcateroy) . '</div>';
 				$page .= '</div>';
 				$page .= '</a>';

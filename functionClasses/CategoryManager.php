@@ -2,10 +2,15 @@
 
 class CategoryManager
 {
-	static function generateCategoryTree($category)
+	static function generateCategoryTree($category, $thread = null)
 	{
 		require SITE_LOCATION.'/config.php';
+		global $translator;
 		$tree = array();
+		if($thread != null)
+		{
+			array_push($tree, '<div class="treeItem"><a href="' . SITE_URL . '/view_thread.php?threadid=' . $thread->getSQLID() . '">' . $thread->getName() . '</a></div>');
+		}
 		array_push($tree, '<div class="treeItem"><a href="' . SITE_URL . '/view_category.php?category=' . $category->getSQLID() . '">' . $category->getName() . '</a></div>');
 
 		$hasCategory = true;
@@ -18,6 +23,9 @@ class CategoryManager
 
 			array_push($tree, '<div class="treeItem"><a href="' . SITE_URL . '/view_category.php?category=' . $parent->getSQLID() . '">' . $parent->getName() . '</a></div>');
 		}
+
+		array_push($tree, '<div class="treeItem"><a href="' . SITE_URL . '/index.php">' . $translator->getString('title2') . '</a></div>');
+
 		$tree = array_reverse($tree);
 
 		$realTree = '';
