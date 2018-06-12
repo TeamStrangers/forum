@@ -59,5 +59,8 @@ $language[$lng]['changeprofile_homepage'] = 'Koduleht profiil';
 $language[$lng]['changeprofile_nationality'] = 'Asukoht';
 $language[$lng]['changeprofile_timezone'] = 'Ajatsoon';
 $language[$lng]['aboutme'] = 'Minust';
+$language[$lng]['gender0']='Defineerimata';
+$language[$lng]['gender1']='Mees';
+$language[$lng]['gender2']='Naine';
 
 unset($lng);

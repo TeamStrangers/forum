@@ -60,5 +60,8 @@ $language[$lng]['changeprofile_homepage'] = 'Homepage';
 $language[$lng]['changeprofile_nationality'] = 'Nationality';
 $language[$lng]['changeprofile_timezone'] = 'Timezone';
 $language[$lng]['aboutme'] = 'About Me';
+$language[$lng]['gender0']='Undefined';
+$language[$lng]['gender1']='Male';
+$language[$lng]['gender2']='Female';
 
 unset($lng);
