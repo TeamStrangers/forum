@@ -13,15 +13,15 @@ global $translator;
 $page = '';
 $additions = array();
 
-$subid = null;
+$threadid = null;
 $action = null;
-if(isset($_GET['subid'])) $subid = (int) DatabaseHandler::escape_string($_GET['subid']);
+if(isset($_GET['threadid'])) $threadid = (int) DatabaseHandler::escape_string($_GET['threadid']);
 if(isset($_GET['action'])) $action = DatabaseHandler::escape_string($_GET['action']);
 
-if($action == 'thread' && $subid != null)
+if($action == 'edit' && $threadid != null)
 {
 }
-else if($action == 'reply' && $subid != null)
+else if($action == 'delete' && $threadid != null)
 {
 }
 
