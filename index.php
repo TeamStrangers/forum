@@ -9,24 +9,38 @@ require 'config.php';
 
 DatabaseHandler::connect();
 
-$translator = new Translator($_SESSION['language']);
 $page = '';
-global $current_user;
+global $current_user, $translator;
 
 
-
-
-if($current_user != null)
+$categories = DatabaseHandler::getCategories();
+foreach($categories as $category)
 {
-	$categories = DatabaseHandler::getBaseCategories();
-	foreach($categories as $category)
+	if($category->getParent() == '')
 	{
-		$page .= $category->getName() . '<br>';
+		$page .= '<div class="basecategory">';
+		$page .= '<div class="title">' . $category->getName() . '</div>';
+		$page .= '<div class="container">';
+
+		foreach($categories as $subcateroy)
+		{
+			if($subcateroy->getParent() == $category->getSQLID())
+			{
+				$page .= '<a href="view_category.php?category=' . $subcateroy->getSQLID() . '" class="category">';
+				$page .= '<div class="title">' . $subcateroy->getName() . '</div>';
+				$page .= '<div class="categorystats">';
+				$threads = CategoryManager::countThreads($subcateroy);
+				if($threads == 1) $page .= '<div class="left">' . $threads . ' ' . $translator->getString('threads1') . '</div>';
+				else $page .= '<div class="left">' . $threads . ' ' . $translator->getString('threads2') . '</div>';
+				//$page .= '<div class="right">' . CategoryManager::countPosts($subcateroy) . '</div>';
+				$page .= '</div>';
+				$page .= '</a>';
+			}
+		}
+
+		$page .= '</div>';
+		$page .= '</div>';
 	}
-}
-else
-{
-	$page .= 'Home';
 }
 
 

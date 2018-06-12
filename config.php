@@ -17,6 +17,7 @@ $translator = new Translator($_SESSION['language']);
 
 require_once SITE_LOCATION . '/functionClasses/PageDrawer.php';
 require_once SITE_LOCATION . '/functionClasses/DatabaseHandler.php';
+require_once SITE_LOCATION . '/functionClasses/CategoryManager.php';
 require_once SITE_LOCATION . '/models/User.php';
 require_once SITE_LOCATION . '/models/Categorie.php';
 require_once SITE_LOCATION . '/models/Thread.php';

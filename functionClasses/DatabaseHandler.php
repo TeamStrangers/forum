@@ -4,6 +4,10 @@ class DatabaseHandler
 {
 	public static $connection;
 
+	private static $categories = null;
+	private static $threads = null;
+	private static $posts = null;
+
 	static function connect()
 	{
 		require SITE_LOCATION . '/config.php';
@@ -109,17 +113,58 @@ class DatabaseHandler
 		return $list;
 	}
 
-	static function getBaseCategories()
+	static function getCategories()
 	{
 		require SITE_LOCATION . '/config.php';
-		$list = array();
-		$query = self::$connection->query('SELECT * FROM `' . $mysql['dbprefix'] . 'categories` WHERE `parent` IS NULL OR `parent` = \'0\'');
-		while($row = $query->fetch_assoc())
+		if(self::$categories == null)
 		{
-			$categorie = new Categorie($row);
-			array_push($list, $categorie);
+			$list = array();
+			$query = self::$connection->query('SELECT * FROM `' . $mysql['dbprefix'] . 'categories`');
+			while($row = $query->fetch_assoc())
+			{
+				$categorie = new Categorie($row);
+				array_push($list, $categorie);
+			}
+			self::$categories = $list;
+			return $list;
 		}
-		return $list;
+		else return self::$categories;
+	}
+
+	static function getThreads()
+	{
+		require SITE_LOCATION . '/config.php';
+		if(self::$threads == null)
+		{
+			$list = array();
+			$query = self::$connection->query('SELECT * FROM `' . $mysql['dbprefix'] . 'threads`');
+			while($row = $query->fetch_assoc())
+			{
+				$thread = new Thread($row);
+				array_push($list, $thread);
+			}
+			self::$threads = $list;
+			return $list;
+		}
+		else return self::$threads;
+	}
+
+	static function getPosts()
+	{
+		require SITE_LOCATION . '/config.php';
+		if(self::$posts == null)
+		{
+			$list = array();
+			$query = self::$connection->query('SELECT * FROM `' . $mysql['dbprefix'] . 'posts`');
+			while($row = $query->fetch_assoc())
+			{
+				$thread = new Thread($row);
+				array_push($list, $thread);
+			}
+			self::$posts = $list;
+			return $list;
+		}
+		else return self::$posts;
 	}
 
 	static function getThreadBySQLID($sqlid, $withPosts = false)

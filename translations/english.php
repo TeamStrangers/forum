@@ -63,5 +63,8 @@ $language[$lng]['aboutme'] = 'About Me';
 $language[$lng]['gender0']='Undefined';
 $language[$lng]['gender1']='Male';
 $language[$lng]['gender2']='Female';
+$language[$lng]['subcategories'] = 'Sub categories';
+$language[$lng]['threads1'] = 'thread';
+$language[$lng]['threads2'] = 'threads';
 
 unset($lng);

@@ -1,0 +1,77 @@
+.categoryTree
+{
+	border: 1px solid #ebebeb;
+	margin-bottom: 15px;
+}
+
+.categoryTree > .treeItem
+{
+	display: inline;
+}
+
+.categoryTree > .treeItem > a
+{
+	color: black;
+	transition: color 0.1s;
+}
+
+.categoryTree > .treeItem > a:hover
+{
+	color: #036d00;
+}
+
+.categoryTree > .treeItem::after
+{
+	padding: 5px;
+	content: '❯';
+}
+
+.subcategories
+{
+	width: 100%;
+	margin-bottom: 15px;
+	border: 1px solid #ebebeb;
+}
+
+.subcategories > .title
+{
+	font-size: 1.5em;
+	font-weight: bold;
+	padding: 15px;
+}
+
+.subcategories > .container
+{
+}
+
+.subcategories > .container > .subcategory
+{
+	border-top: 1px solid #ebebeb;
+	transition: background-color 0.1s, color 0.1s;
+	display: block;
+	color: black;
+}
+
+.subcategories > .container > .subcategory:hover
+{
+	background-color: #ebebeb;
+	color: #036d00;
+}
+
+.subcategories > .container > .subcategory > .title
+{
+	padding: 15px;
+	display: inline-block;
+}
+
+.subcategories > .container > .subcategory > .categorystats
+{
+	float: right;
+	display: inline-block;
+}
+
+.subcategories > .container > .subcategory > .categorystats > .left, .subcategories > .container > .subcategory > .categorystats > .right
+{
+	display: inline-block;
+	padding: 15px;
+}

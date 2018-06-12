@@ -62,5 +62,8 @@ $language[$lng]['aboutme'] = 'Minust';
 $language[$lng]['gender0']='Defineerimata';
 $language[$lng]['gender1']='Mees';
 $language[$lng]['gender2']='Naine';
+$language[$lng]['subcategories'] = 'Alamkategooriad';
+$language[$lng]['threads1'] = 'teema';
+$language[$lng]['threads2'] = 'teemat';
 
 unset($lng);

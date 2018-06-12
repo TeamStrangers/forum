@@ -1,0 +1,49 @@
+.basecategory
+{
+	width: 100%;
+	margin-bottom: 15px;
+	border: 1px solid #ebebeb;
+}
+
+.basecategory > .title
+{
+	font-size: 2em;
+	font-weight: bold;
+	padding: 15px;
+}
+
+.basecategory > .container
+{
+}
+
+.basecategory > .container > .category
+{
+	border-top: 1px solid #ebebeb;
+	transition: background-color 0.1s, color 0.1s;
+	display: block;
+	color: black;
+}
+
+.basecategory > .container > .category:hover
+{
+	background-color: #ebebeb;
+	color: #036d00;
+}
+
+.basecategory > .container > .category > .title
+{
+	padding: 15px;
+	display: inline-block;
+}
+
+.basecategory > .container > .category > .categorystats
+{
+	float: right;
+	display: inline-block;
+}
+
+.basecategory > .container > .category > .categorystats > .left, .basecategory > .container > .category > .categorystats > .right
+{
+	display: inline-block;
+	padding: 15px;
+}
