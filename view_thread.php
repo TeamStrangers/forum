@@ -9,7 +9,7 @@ require 'config.php';
 
 DatabaseHandler::connect();
 
-global $translator;
+global $current_user, $translator;
 $page = '';
 $additions = array();
 
@@ -72,9 +72,12 @@ if($thread != null)
 		$page .= '<span class="infofield"><span class="left">' . $translator->getString('joined') . '</span><span class="right">' . date("F j, Y", $poster2->getJoindate()) . '</span></span><br>';
 		$page .= '<span class="infofield"><span class="left">' . $translator->getString('threads_posted') . '</span><span class="right">' . count(DatabaseHandler::getThreadsByUser($poster2)) . '</span></span><br>';
 		$page .= '<span class="infofield"><span class="left">' . $translator->getString('posts_posted') . '</span><span class="right">' . count(DatabaseHandler::getPostsByUser($poster2)) . '</span></span><br>';
-		if($current_user->getSQLID() == $post->getCreatedBy() || $current_user->getRole() == 3 || $current_user->getRole() == 4)
+		if($current_user != null)
 		{
-			$page .= '<span class="infofield" style="margin: 5px 0;"><a href="' . SITE_URL . '/edit_thread.php?action=deletepost&threadid=' . $post->getSQLID() . '">' . $translator->getString('post_delete') . '</a></span>';
+			if($current_user->getSQLID() == $post->getCreatedBy() || $current_user->getRole() == 3 || $current_user->getRole() == 4)
+			{
+				$page .= '<span class="infofield" style="margin: 5px 0;"><a href="' . SITE_URL . '/edit_thread.php?action=deletepost&threadid=' . $post->getSQLID() . '">' . $translator->getString('post_delete') . '</a></span>';
+			}
 		}
 		$page .= '</div>';
 
