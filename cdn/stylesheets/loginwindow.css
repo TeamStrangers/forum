@@ -114,6 +114,7 @@
 #loginWindowTabContent form input[type=submit]
 {
 	background-color: #ebebeb;
+	cursor: pointer;
 }
 
 #loginWindowTabContent form input[type=submit]:hover

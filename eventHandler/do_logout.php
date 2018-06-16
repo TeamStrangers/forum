@@ -7,4 +7,7 @@ $translator = new Translator($_SESSION['language']);
 
 unset($_SESSION['sqlid']);
 
-header("Location: " . SITE_URL . "/index.php?msg[0]=success&msg[1]=" . $translator->getString('logoutsuccess'));
+$fromsite = SITE_URL . '/index.php';
+if(isset($_POST['fromsite'])) $fromsite = $_REQUEST['fromsite'];
+
+header("Location: " . $fromsite);

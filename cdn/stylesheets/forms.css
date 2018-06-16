@@ -1,0 +1,47 @@
+.global_pageForm
+{
+	width: 75%;
+	margin-left: calc(25% / 2);
+}
+
+.global_pageForm > input
+{
+	font-size: 1.2em;
+	padding: 5px;
+	width: 100%;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	border: 1px solid #808080;
+	border-radius: 2px;
+	background-color: #ffffff;
+	transition: background-color 0.1s, color 0.1s;
+}
+
+.global_pageForm > textarea
+{
+	font-size: 1.2em;
+	padding: 5px;
+	width: 100%;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	border: 1px solid #808080;
+	border-radius: 2px;
+	background-color: #ffffff;
+	transition: background-color 0.1s, color 0.1s;
+}
+
+.global_pageForm > input[type=submit]
+{
+	background-color: #ebebeb;
+	cursor: pointer;
+}
+
+.global_pageForm > input[type=submit]:hover
+{
+	background-color: #cccccc;
+	color: #036d00;
+}
+
+.global_pageForm > textarea
+{
+}

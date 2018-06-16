@@ -22,10 +22,16 @@ if(isset($_GET['threadid']))
 
 if($thread != null)
 {
-	$additions['custom_menu0'] = array();
-	$additions['custom_menu0'][$translator->getString('post_control_edit')] = '/edit_thread.php?action=edit&threadid=' . $thread->getSQLID();
-	$additions['custom_menu0'][$translator->getString('post_control_reply')] = '/new_thread.php?action=reply&subid=' . $thread->getSQLID();
-	$additions['custom_menu0'][$translator->getString('post_control_delete')] = '/edit_thread.php?action=delete&threadid=' . $thread->getSQLID();
+	if($current_user != null)
+	{
+		$additions['custom_menu0'] = array();
+		$additions['custom_menu0'][$translator->getString('post_control_reply')] = '/new_thread.php?action=reply&subid=' . $thread->getSQLID();
+		if($current_user->getSQLID() == $thread->getCreatedBy() || $current_user->getRole() == 3 || $current_user->getRole() == 4) //Creator, moderator or administrator
+		{
+			$additions['custom_menu0'][$translator->getString('post_control_edit')] = '/edit_thread.php?action=edit&threadid=' . $thread->getSQLID();
+			$additions['custom_menu0'][$translator->getString('post_control_delete')] = '/edit_thread.php?action=delete&threadid=' . $thread->getSQLID();
+		}
+	}
 
 	define('CUSTOM_TITLE', $translator->getString('title', array('pagename' => htmlspecialchars($thread->getName()))));
 
@@ -37,7 +43,7 @@ if($thread != null)
 	$page .= '<div id="mainThread">';
 
 	$page .= '<div class="poster">';
-	$page .= '<img class="avatars" src="' . $poster->getAvatar() . '">';
+	$page .= '<img class="avatar" src="' . $poster->getAvatar() . '">';
 	$page .= '<span class="infofield"><a href="' . SITE_URL . '/userCP/view_profile.php?uid=' . $poster->getSQLID() . '">' . $poster->getUsername() . '</a></span>';
 	$page .= '<span class="infofield" style="margin: 5px 0;">' . $poster->getRoleTxt() . '</span>';
 	$page .= '<span class="infofield" style="margin: 10px 0; font-size: 0.8em;">' . htmlspecialchars($poster->getNationality()) . '</span>';
@@ -59,10 +65,19 @@ if($thread != null)
 
 		$page .= '<div class="post">';
 		$page .= '<div class="poster">';
-		$page .= '<img class="avatars" src="' . $poster2->getAvatar() . '">';
+		$page .= '<img class="avatar" src="' . $poster2->getAvatar() . '">';
 		$page .= '<span class="infofield"><a href="' . SITE_URL . '/userCP/view_profile.php?uid=' . $poster2->getSQLID() . '">' . $poster2->getUsername() . '</a></span>';
 		$page .= '<span class="infofield" style="margin: 5px 0;">' . $poster2->getRoleTxt() . '</span>';
+		$page .= '<span class="infofield" style="margin: 10px 0; font-size: 0.8em;">' . htmlspecialchars($poster2->getNationality()) . '</span>';
+		$page .= '<span class="infofield"><span class="left">' . $translator->getString('joined') . '</span><span class="right">' . date("F j, Y", $poster2->getJoindate()) . '</span></span><br>';
+		$page .= '<span class="infofield"><span class="left">' . $translator->getString('threads_posted') . '</span><span class="right">' . count(DatabaseHandler::getThreadsByUser($poster2)) . '</span></span><br>';
+		$page .= '<span class="infofield"><span class="left">' . $translator->getString('posts_posted') . '</span><span class="right">' . count(DatabaseHandler::getPostsByUser($poster2)) . '</span></span><br>';
+		if($current_user->getSQLID() == $post->getCreatedBy() || $current_user->getRole() == 3 || $current_user->getRole() == 4)
+		{
+			$page .= '<span class="infofield" style="margin: 5px 0;"><a href="' . SITE_URL . '/edit_thread.php?action=deletepost&threadid=' . $post->getSQLID() . '">' . $translator->getString('post_delete') . '</a></span>';
+		}
 		$page .= '</div>';
+
 		$page .= '<div class="content">' . nl2br(htmlspecialchars($post->getContent())) . '</div></div>';
 
 	}

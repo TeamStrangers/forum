@@ -1,31 +1,3 @@
-.categoryTree
-{
-	border: 1px solid #cdcdcd;
-	margin-bottom: 15px;
-}
-
-.categoryTree > .treeItem
-{
-	display: inline;
-}
-
-.categoryTree > .treeItem > a
-{
-	color: black;
-	transition: color 0.1s;
-}
-
-.categoryTree > .treeItem > a:hover
-{
-	color: #036d00;
-}
-
-.categoryTree > .treeItem::after
-{
-	padding: 5px;
-	content: '❯';
-}
-
 #mainThread
 {
 	border: 1px solid #cdcdcd;
@@ -135,4 +107,30 @@
 	padding: 15px;
 	vertical-align: top;
 	display: inline-block;
+}
+
+#posts .poster .infofield
+{
+	display: block;
+	text-align: center;
+	width: 100%;
+}
+
+#posts .poster .infofield .left
+{
+	font-size: 0.8em;
+	display: inline;
+	float: left;
+}
+
+#posts .poster .infofield .right
+{
+	font-size: 0.8em;
+	display: inline;
+	float: right;
+}
+
+#posts .poster *
+{
+	display: block;
 }

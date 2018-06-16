@@ -20,7 +20,7 @@ class PageDrawer
 	{
 		$styles = '<link href="' . CDN_URL . '/stylesheets/menu.css" type="text/css" rel="stylesheet" />';
 		$styles .= '<link href="' . CDN_URL . '/stylesheets/style.css" type="text/css" rel="stylesheet" />';
-		$styles .= '<link href="' . CDN_URL . '/stylesheets/alertbox.css" type="text/css" rel="stylesheet" />';
+		$styles .= '<link href="' . CDN_URL . '/stylesheets/forms.css" type="text/css" rel="stylesheet" />';
 		$styles .= '<link href="' . CDN_URL . '/stylesheets/loginwindow.css" type="text/css" rel="stylesheet" />';
 		$styles .= '<link href="' . CDN_URL . '/stylesheets/fontawesome/fontawesome-all.min.css" rel="stylesheet" />';
 		$styles .= '<link href="' . CDN_URL . '/stylesheets/pages/' . THIS_SCRIPT . '.css" rel="stylesheet" />';
@@ -126,7 +126,7 @@ class PageDrawer
 			{
 				echo '<li><a href="'.SITE_URL.'/userCP/view_profile.php?uid='.$current_user->getSQLID().'">'.$translator->getString('profile').'</a></li>';
 				echo '<li><a href="'.SITE_URL.'/userCP/usercp.php">'.$translator->getString('account_settings').'</a></li>';
-				echo '<li><a href="'.SITE_URL.'/eventHandler/do_logout.php">'.$translator->getString('logout').'</a></li>';
+				echo '<li><a href="'.SITE_URL.'/eventHandler/do_logout.php?fromsite=' . $_SERVER['REQUEST_URI'] . '">'.$translator->getString('logout').'</a></li>';
 			}
 			echo '</ul>';
 

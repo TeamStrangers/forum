@@ -1,31 +1,3 @@
-.categoryTree
-{
-	border: 1px solid #cdcdcd;
-	margin-bottom: 15px;
-}
-
-.categoryTree > .treeItem
-{
-	display: inline;
-}
-
-.categoryTree > .treeItem > a
-{
-	color: black;
-	transition: color 0.1s;
-}
-
-.categoryTree > .treeItem > a:hover
-{
-	color: #036d00;
-}
-
-.categoryTree > .treeItem::after
-{
-	padding: 5px;
-	content: '❯';
-}
-
 .subcategories
 {
 	width: 100%;

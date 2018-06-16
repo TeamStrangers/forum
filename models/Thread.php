@@ -67,4 +67,14 @@ class Thread
 	{
 		return $this->createTime;
 	}
+
+	public function setName($name)
+	{
+		$this->name = $name;
+	}
+
+	public function setContent($content)
+	{
+		$this->content = $content;
+	}
 }

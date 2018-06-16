@@ -9,7 +9,7 @@ require 'config.php';
 
 DatabaseHandler::connect();
 
-global $translator;
+global $translator, $current_user;
 
 $page = '';
 $additions = array();
@@ -30,8 +30,13 @@ foreach($categories as $cat)
 
 if($category != null)
 {
-	$additions['custom_menu0'] = array();
-	$additions['custom_menu0'][$translator->getString('post_control_new')] = '/new_thread.php?action=thread&subid=' . $category->getSQLID();
+	if($current_user != null)
+	{
+		$additions['custom_menu0'] = array();
+		$additions['custom_menu0'][$translator->getString('post_control_new')] = '/new_thread.php?action=thread&subid=' . $category->getSQLID();
+	}
+
+	define('CUSTOM_TITLE', $translator->getString('title', array('pagename' => htmlspecialchars($category->getName()))));
 
 	$page .= '<div class="categoryTree">' . CategoryManager::generateCategoryTree($category) . '</div>';
 

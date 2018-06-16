@@ -71,10 +71,37 @@ class DatabaseHandler
 	static function createUser($username, $email, $password)
 	{
 		require SITE_LOCATION . '/config.php';
+
 		$username = DatabaseHandler::escape_string($username);
 		$email = DatabaseHandler::escape_string($email);
 		$password = DatabaseHandler::escape_string($password);
+
 		$query = self::$connection->query('INSERT INTO `' . $mysql['dbprefix'] . 'users` (username, password, email, joindate, sitelanguage) VALUES (\'' . $username . '\', \'' . $password . '\', \'' . $email . '\', \'' . time() . '\', \'' . $_SESSION['language'] . '\')');
+		return $query->last_insert_id;
+	}
+
+	static function createThread($category, $createdBy, $name, $content)
+	{
+		require SITE_LOCATION . '/config.php';
+
+		$category = DatabaseHandler::escape_string($category);
+		$createdBy = DatabaseHandler::escape_string($createdBy);
+		$name = DatabaseHandler::escape_string($name);
+		$content = DatabaseHandler::escape_string($content);
+
+		$query = self::$connection->query('INSERT INTO `' . $mysql['dbprefix'] . 'threads` (createdBy, categorie, name, content, createTime) VALUES (\'' . $createdBy . '\', \'' . $category . '\', \'' . $name . '\', \'' . $content . '\', \'' . time() . '\')');
+		return $query->last_insert_id;
+	}
+
+	static function createPost($thread, $createdBy, $content)
+	{
+		require SITE_LOCATION . '/config.php';
+
+		$thread = DatabaseHandler::escape_string($thread);
+		$createdBy = DatabaseHandler::escape_string($createdBy);
+		$content = DatabaseHandler::escape_string($content);
+
+		$query = self::$connection->query('INSERT INTO `' . $mysql['dbprefix'] . 'posts` (createdBy, thread, content, createTime) VALUES (\'' . $createdBy . '\', \'' . $thread . '\', \'' . $content . '\', \'' . time() . '\')');
 		return $query->last_insert_id;
 	}
 
@@ -252,6 +279,18 @@ class DatabaseHandler
 		else return null;
 	}
 
+	static function getPostBySQLID($sqlid)
+	{
+		require SITE_LOCATION . '/config.php';
+		$query = self::$connection->query('SELECT * FROM `' . $mysql['dbprefix'] . 'posts` WHERE `sqlid` = \'' . $sqlid . '\' LIMIT 1');
+		if($query->num_rows > 0)
+		{
+			$post = new Post($query->fetch_assoc());
+			return $post;
+		}
+		else return null;
+	}
+
 	static function saveUser($user)
 	{
 		require SITE_LOCATION . '/config.php';
@@ -271,5 +310,31 @@ class DatabaseHandler
 		$fields .= '`categoriesFollowing` = \'' . $user->getCategoriesFollowing() . '\'';
 
 		self::$connection->query('UPDATE `' . $mysql['dbprefix'] . 'users` SET ' . $fields . ' WHERE `sqlid` = \'' . $user->getSQLID() . '\'');
+	}
+
+	static function saveThread($thread)
+	{
+		require SITE_LOCATION . '/config.php';
+
+		$fields = '`createdBy` = \'' . $thread->getCreatedBy() . '\',';
+		$fields .= '`categorie` = \'' . $thread->getCategorie() . '\',';
+		$fields .= '`name` = \'' . $thread->getName() . '\',';
+		$fields .= '`content` = \'' . $thread->getContent() . '\'';
+
+		self::$connection->query('UPDATE `' . $mysql['dbprefix'] . 'threads` SET ' . $fields . ' WHERE `sqlid` = \'' . $thread->getSQLID() . '\'');
+	}
+
+	static function deleteThread($thread)
+	{
+		require SITE_LOCATION . '/config.php';
+
+		self::$connection->query('DELETE FROM `' . $mysql['dbprefix'] . 'threads` WHERE `sqlid` = \'' . $thread->getSQLID() . '\'');
+	}
+
+	static function deletePost($post)
+	{
+		require SITE_LOCATION . '/config.php';
+
+		self::$connection->query('DELETE FROM `' . $mysql['dbprefix'] . 'posts` WHERE `sqlid` = \'' . $post->getSQLID() . '\'');
 	}
 }

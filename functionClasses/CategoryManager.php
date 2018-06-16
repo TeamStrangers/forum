@@ -2,11 +2,23 @@
 
 class CategoryManager
 {
-	static function generateCategoryTree($category, $thread = null)
+	static function generateCategoryTree($category, $thread = null, $newthread = null, $editthread = null, $newpost = null)
 	{
 		require SITE_LOCATION.'/config.php';
 		global $translator;
 		$tree = array();
+		if($newthread != null)
+		{
+			array_push($tree, '<div class="treeItem"><a>' . $translator->getString('title_newthread') . '</a></div>');
+		}
+		if($newpost != null)
+		{
+			array_push($tree, '<div class="treeItem"><a>' . $translator->getString('title_newpost') . '</a></div>');
+		}
+		if($editthread != null)
+		{
+			array_push($tree, '<div class="treeItem"><a>' . $translator->getString('title_editthread') . '</a></div>');
+		}
 		if($thread != null)
 		{
 			array_push($tree, '<div class="treeItem"><a href="' . SITE_URL . '/view_thread.php?threadid=' . $thread->getSQLID() . '">' . $thread->getName() . '</a></div>');
