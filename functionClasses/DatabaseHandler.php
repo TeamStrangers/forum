@@ -214,6 +214,20 @@ class DatabaseHandler
 		else return self::$threads;
 	}
 
+	static function getThreadsByTime()
+	{
+		require SITE_LOCATION . '/config.php';
+		$list = array();
+		$query = self::$connection->query('SELECT * FROM `' . $mysql['dbprefix'] . 'threads` ORDER BY createTime DESC');
+		while($row = $query->fetch_assoc())
+		{
+			$thread = new Thread($row);
+			array_push($list, $thread);
+		}
+		self::$threads = $list;
+		return $list;
+	}
+
 	static function getThreadsByCategory($category, $withPosts = false)
 	{
 		require SITE_LOCATION . '/config.php';

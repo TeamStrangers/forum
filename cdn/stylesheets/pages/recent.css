@@ -1,0 +1,33 @@
+#threads
+{
+	width: 100%;
+}
+
+#threads > .thread
+{
+	display: block;
+	width: 100%;
+	margin-top: 5px;
+	border: 1px solid #cdcdcd;
+	color: black;
+	transition: background-color 0.1s, color 0.1s;
+}
+
+#threads > .thread:hover
+{
+	background-color: #cdcdcd;
+	color: #036d00;
+}
+
+#threads > .thread > .title
+{
+	display: inline-block;
+	padding: 15px;
+}
+
+#threads > .thread > .poster
+{
+	display: inline-block;
+	padding: 15px;
+	float: right;
+}

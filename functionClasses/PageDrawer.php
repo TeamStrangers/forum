@@ -71,7 +71,6 @@ class PageDrawer
 			echo '<img id="mainMenuLogo" src="'.CDN_URL.'/images/logo.png" alt="Logo" />';
 			echo '<ul id="mainMenuLinks">';
 			echo '<li><a href="'.SITE_URL.'/index.php">'.$translator->getString('title_home').'</a></li>';
-			echo '<li><a href="'.SITE_URL.'/trending.php">'.$translator->getString('title_trending').'</a></li>';
 			echo '<li><a href="'.SITE_URL.'/recent.php">'.$translator->getString('title_mostrecent').'</a></li>';
 			echo '</ul>';
 

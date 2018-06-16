@@ -6,7 +6,6 @@ $language[$lng]['languagename'] = 'Eesti keel';
 $language[$lng]['title'] = '{pagename} | Discussr';
 $language[$lng]['title2'] = 'Discussr';
 $language[$lng]['title_home'] = 'Avaleht';
-$language[$lng]['title_trending'] = 'Kõige populaarsem';
 $language[$lng]['title_mostrecent'] = 'Kõige uuem';
 $language[$lng]['title_profile'] = 'Profiil';
 $language[$lng]['title_viewthread'] = 'Teema';

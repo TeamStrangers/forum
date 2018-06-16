@@ -6,7 +6,6 @@ $language[$lng]['languagename'] = 'English';
 $language[$lng]['title'] = '{pagename} | Discussr';
 $language[$lng]['title2'] = 'Discussr';
 $language[$lng]['title_home'] = 'Home';
-$language[$lng]['title_trending'] = 'Popular';
 $language[$lng]['title_mostrecent'] = 'Most Recent';
 $language[$lng]['title_profile'] = 'Profile';
 $language[$lng]['title_viewthread'] = 'View Thread';
