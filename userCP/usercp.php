@@ -41,7 +41,7 @@ if($current_user != null)
 			}
 			else
 			{
-				$page .= '<form method="POST">';
+				$page .= '<form method="POST" class="global_pageForm">';
 				$page .= '<select name="gender">';
 				$page .= '<option value="0"' . ($current_user->getGender()==0?' selected':'') . '>' . $translator->getString('changeprofile_gender0') . '</option>';
 				$page .= '<option value="1"' . ($current_user->getGender()==1?' selected':'') . '>' . $translator->getString('changeprofile_gender1') . '</option>';
@@ -74,7 +74,7 @@ if($current_user != null)
 			}
 			else
 			{
-				$page .= '<form method="POST">';
+				$page .= '<form method="POST" class="global_pageForm">';
 				$page .= '<input type="password" name="curr-passwd" placeholder="'.$translator->getString('password4').'" required><br>';
 				$page .= '<input type="password" name="new-passwd" placeholder="'.$translator->getString('password3').'" required><br>';
 				$page .= '<input type="password" name="new-passwd2" placeholder="'.$translator->getString('password2').'" required><br>';
@@ -105,7 +105,7 @@ if($current_user != null)
 			}
 			else
 			{
-				$page .= '<form method="POST">';
+				$page .= '<form method="POST" class="global_pageForm">';
 				$page .= '<input type="email" name="new-email" placeholder="'.$translator->getString('email2').'" required><br>';
 				$page .= '<input type="submit" value="'.$translator->getString('change_email').'"><br>';
 				$page .= '</form>';
@@ -134,7 +134,7 @@ if($current_user != null)
 			}
 			else
 			{
-				$page .= '<form method="POST">';
+				$page .= '<form method="POST" class="global_pageForm">';
 				$page .= '<input type="text" name="new-username" placeholder="'.$translator->getString('username2').'" required><br>';
 				$page .= '<input type="submit" value="'.$translator->getString('change_username').'"><br>';
 				$page .= '</form>';
@@ -152,7 +152,7 @@ if($current_user != null)
 			}
 			else
 			{
-				$page .= '<form method="POST">';
+				$page .= '<form method="POST" class="global_pageForm">';
 				$page .= '<input type="email" name="avatar" placeholder="'.$translator->getString('gravatar_email').'"><br>';
 				$page .= '<input type="submit" value="'.$translator->getString('change_avatar').'"><br>';
 				$page .= '</form>';

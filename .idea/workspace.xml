@@ -5,18 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0448010a-bcfb-4d9a-a9a6-2af7695e7748" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/new_thread.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cdn/stylesheets/pages/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/cdn/stylesheets/pages/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cdn/stylesheets/pages/view_category.css" beforeDir="false" afterPath="$PROJECT_DIR$/cdn/stylesheets/pages/view_category.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cdn/stylesheets/pages/view_thread.css" beforeDir="false" afterPath="$PROJECT_DIR$/cdn/stylesheets/pages/view_thread.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functionClasses/CategoryManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/functionClasses/CategoryManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functionClasses/DatabaseHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/functionClasses/DatabaseHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/translations/english.php" beforeDir="false" afterPath="$PROJECT_DIR$/translations/english.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/translations/estonian.php" beforeDir="false" afterPath="$PROJECT_DIR$/translations/estonian.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view_category.php" beforeDir="false" afterPath="$PROJECT_DIR$/view_category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view_thread.php" beforeDir="false" afterPath="$PROJECT_DIR$/view_thread.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cdn/stylesheets/forms.css" beforeDir="false" afterPath="$PROJECT_DIR$/cdn/stylesheets/forms.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userCP/usercp.php" beforeDir="false" afterPath="$PROJECT_DIR$/userCP/usercp.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,70 +18,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PageDrawer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functionClasses/PageDrawer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="62" column="12" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="48" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#31#38#1" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view_thread.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view_thread.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="45" column="179" selection-start-line="45" selection-start-column="179" selection-end-line="45" selection-end-column="179" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CategoryManager.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functionClasses/CategoryManager.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="40" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DatabaseHandler.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/functionClasses/DatabaseHandler.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="190" column="5" lean-forward="true" selection-start-line="190" selection-start-column="5" selection-end-line="190" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new_thread.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/new_thread.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="english.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/translations/english.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="723">
-              <caret line="76" selection-start-line="76" selection-end-line="76" selection-end-column="51" />
+            <state relative-caret-position="798">
+              <caret line="90" selection-start-line="90" selection-end-line="90" selection-end-column="47" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forms.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cdn/stylesheets/forms.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="21" lean-forward="true" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -98,8 +42,8 @@
       <file leaf-file-name="estonian.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/translations/estonian.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="753">
-              <caret line="75" column="48" selection-start-line="75" selection-start-column="48" selection-end-line="75" selection-end-column="48" />
+            <state relative-caret-position="798">
+              <caret line="89" column="50" selection-start-line="89" selection-start-column="50" selection-end-line="89" selection-end-column="50" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
               </folding>
@@ -125,6 +69,11 @@
       <find>sitelang</find>
       <find>avatar</find>
       <find>EditPo</find>
+      <find>role</find>
+      <find>logout</find>
+      <find>getThreadBySQLID</find>
+      <find>createuser</find>
+      <find>getposts</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -149,38 +98,41 @@
         <option value="$PROJECT_DIR$/cdn/scripts/languageselector.js" />
         <option value="$PROJECT_DIR$/eventHandler/do_languageChange.php" />
         <option value="$PROJECT_DIR$/cdn/menu.css" />
-        <option value="$PROJECT_DIR$/eventHandler/do_logout.php" />
         <option value="$PROJECT_DIR$/translations/Translator.php" />
         <option value="$PROJECT_DIR$/models/Post.php" />
-        <option value="$PROJECT_DIR$/models/Thread.php" />
         <option value="$PROJECT_DIR$/recent.php" />
         <option value="$PROJECT_DIR$/trending.php" />
         <option value="$PROJECT_DIR$/userCP/view_profile.php" />
         <option value="$PROJECT_DIR$/cdn/stylesheets/menu.css" />
-        <option value="$PROJECT_DIR$/cdn/stylesheets/style.css" />
         <option value="$PROJECT_DIR$/cdn/stylesheets/pages/usercp.css" />
         <option value="$PROJECT_DIR$/models/User.php" />
-        <option value="$PROJECT_DIR$/userCP/usercp.php" />
         <option value="$PROJECT_DIR$/eventHandler/do_login.php" />
         <option value="$PROJECT_DIR$/eventHandler/check_userStatus.php" />
         <option value="$PROJECT_DIR$/eventHandler/do_register.php" />
         <option value="$PROJECT_DIR$/cdn/scripts/menus.js" />
-        <option value="$PROJECT_DIR$/functionClasses/PageDrawer.php" />
-        <option value="$PROJECT_DIR$/cdn/stylesheets/loginwindow.css" />
         <option value="$PROJECT_DIR$/error.php" />
         <option value="$PROJECT_DIR$/models/Categorie.php" />
         <option value="$PROJECT_DIR$/config.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/functionClasses/CategoryManager.php" />
-        <option value="$PROJECT_DIR$/cdn/stylesheets/pages/view_thread.css" />
-        <option value="$PROJECT_DIR$/cdn/stylesheets/pages/view_category.css" />
         <option value="$PROJECT_DIR$/cdn/stylesheets/pages/index.css" />
+        <option value="$PROJECT_DIR$/eventHandler/do_logout.php" />
+        <option value="$PROJECT_DIR$/cdn/stylesheets/loginwindow.css" />
+        <option value="$PROJECT_DIR$/functionClasses/PageDrawer.php" />
+        <option value="$PROJECT_DIR$/view_category.php" />
+        <option value="$PROJECT_DIR$/cdn/stylesheets/pages/new_thread.css" />
+        <option value="$PROJECT_DIR$/cdn/stylesheets/style.css" />
+        <option value="$PROJECT_DIR$/cdn/stylesheets/pages/view_category.css" />
+        <option value="$PROJECT_DIR$/models/Thread.php" />
+        <option value="$PROJECT_DIR$/edit_thread.php" />
+        <option value="$PROJECT_DIR$/functionClasses/CategoryManager.php" />
+        <option value="$PROJECT_DIR$/new_thread.php" />
+        <option value="$PROJECT_DIR$/functionClasses/DatabaseHandler.php" />
+        <option value="$PROJECT_DIR$/cdn/stylesheets/pages/view_thread.css" />
         <option value="$PROJECT_DIR$/translations/english.php" />
         <option value="$PROJECT_DIR$/translations/estonian.php" />
-        <option value="$PROJECT_DIR$/view_category.php" />
-        <option value="$PROJECT_DIR$/new_thread.php" />
         <option value="$PROJECT_DIR$/view_thread.php" />
-        <option value="$PROJECT_DIR$/functionClasses/DatabaseHandler.php" />
+        <option value="$PROJECT_DIR$/userCP/usercp.php" />
+        <option value="$PROJECT_DIR$/cdn/stylesheets/forms.css" />
       </list>
     </option>
   </component>
@@ -239,17 +191,17 @@
             <path>
               <item name="forum" type="b2602c69:ProjectViewProjectNode" />
               <item name="forum" type="462c0819:PsiDirectoryNode" />
-              <item name="functionClasses" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="forum" type="b2602c69:ProjectViewProjectNode" />
-              <item name="forum" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="eventHandler" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="forum" type="b2602c69:ProjectViewProjectNode" />
               <item name="forum" type="462c0819:PsiDirectoryNode" />
               <item name="translations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="forum" type="b2602c69:ProjectViewProjectNode" />
+              <item name="forum" type="462c0819:PsiDirectoryNode" />
+              <item name="userCP" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -306,7 +258,8 @@
       <workItem from="1527325868830" duration="23496000" />
       <workItem from="1527664196258" duration="8246000" />
       <workItem from="1527841608854" duration="6787000" />
-      <workItem from="1528805883981" duration="22516000" />
+      <workItem from="1528805883981" duration="25819000" />
+      <workItem from="1529174604799" duration="8750000" />
     </task>
     <task id="LOCAL-00001" summary="Added language selection, alertboxes, fixed phps require location mess.">
       <created>1526480149232</created>
@@ -371,11 +324,32 @@
       <option name="project" value="LOCAL" />
       <updated>1528825234342</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Finished category &amp; thread views.">
+      <created>1528831668610</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1528831668610</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Started with new thread, post and edit, delete thread.">
+      <created>1528838899770</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1528838899770</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Finished threads and posts.">
+      <created>1529184839305</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1529184839306</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143235000" />
+    <option name="totallyTimeSpent" value="155288000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="27" width="1920" height="1053" extended-state="6" />
@@ -420,7 +394,10 @@
     <MESSAGE value="Redid login window design" />
     <MESSAGE value="All in all I got to say- Today was a good day." />
     <MESSAGE value="All in all I got to say: Today was a good day. :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="All in all I got to say: Today was a good day. :)" />
+    <MESSAGE value="Finished category &amp; thread views." />
+    <MESSAGE value="Started with new thread, post and edit, delete thread." />
+    <MESSAGE value="Finished threads and posts." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished threads and posts." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -428,34 +405,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cdn/stylesheets/menu.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="11" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functionClasses/DatabaseHandler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="35" lean-forward="true" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eventHandler/do_login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="27" lean-forward="true" selection-end-line="45" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eventHandler/do_logout.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -559,31 +508,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2478">
-          <caret line="173" lean-forward="true" selection-start-line="173" selection-end-line="173" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cdn/stylesheets/menu.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="39" column="18" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userCP/usercp.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eventHandler/do_logout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
@@ -594,32 +522,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eventHandler/do_login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="55" column="31" selection-start-line="55" selection-start-column="31" selection-end-line="55" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/error.php" />
     <entry file="file://$PROJECT_DIR$/cdn/scripts/menus.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eventHandler/do_register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cdn/stylesheets/loginwindow.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="17" lean-forward="true" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -637,13 +544,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cdn/stylesheets/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="68" column="18" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -651,24 +551,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cdn/stylesheets/pages/view_thread.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="29" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="32" column="138" selection-start-line="32" selection-start-column="62" selection-end-line="32" selection-end-column="138" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cdn/stylesheets/pages/view_category.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="63" column="29" selection-start-line="63" selection-start-column="29" selection-end-line="63" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -682,44 +568,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/translations/english.php">
+    <entry file="file://$PROJECT_DIR$/models/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="723">
-          <caret line="76" selection-start-line="76" selection-end-line="76" selection-end-column="51" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="-525">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/translations/estonian.php">
+    <entry file="file://$PROJECT_DIR$/eventHandler/do_register.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="753">
-          <caret line="75" column="48" selection-start-line="75" selection-start-column="48" selection-end-line="75" selection-end-column="48" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="504">
+          <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/new_thread.php">
+    <entry file="file://$PROJECT_DIR$/eventHandler/do_login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+        <state relative-caret-position="816">
+          <caret line="55" selection-start-line="55" selection-end-line="55" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view_category.php">
+    <entry file="file://$PROJECT_DIR$/eventHandler/do_logout.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="150">
+          <caret line="10" column="46" lean-forward="true" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/functionClasses/PageDrawer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="62" column="12" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="48" />
+        <state relative-caret-position="360">
+          <caret line="24" column="78" selection-start-line="24" selection-start-column="78" selection-end-line="24" selection-end-column="78" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="e#31#38#1" expanded="true" />
@@ -729,18 +609,92 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cdn/stylesheets/loginwindow.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="97" column="21" lean-forward="true" selection-start-line="94" selection-start-column="4" selection-end-line="97" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cdn/stylesheets/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="843">
+          <caret line="114" column="1" selection-start-line="114" selection-start-column="1" selection-end-line="114" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cdn/stylesheets/pages/view_category.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cdn/stylesheets/pages/view_profile.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cdn/stylesheets/pages/new_thread.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Thread.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="12" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/functionClasses/CategoryManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="40" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="40" />
+        <state relative-caret-position="375">
+          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new_thread.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="603">
+          <caret line="84" column="149" selection-start-line="84" selection-start-column="149" selection-end-line="84" selection-end-column="149" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cdn/stylesheets/pages/view_thread.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="19" lean-forward="true" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/translations/estonian.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="89" column="50" selection-start-line="89" selection-start-column="50" selection-end-line="89" selection-end-column="50" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functionClasses/DatabaseHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1541">
+          <caret line="185" column="28" selection-start-line="185" selection-start-column="20" selection-end-line="185" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/edit_thread.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="60" column="36" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view_thread.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="45" column="179" selection-start-line="45" selection-start-column="179" selection-end-line="45" selection-end-column="179" />
+        <state relative-caret-position="273">
+          <caret line="46" column="134" selection-start-line="46" selection-start-column="134" selection-end-line="46" selection-end-column="134" />
           <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
@@ -748,17 +702,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/Thread.php">
+    <entry file="file://$PROJECT_DIR$/view_category.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
+        <state relative-caret-position="483">
+          <caret line="40" column="4" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="104" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functionClasses/DatabaseHandler.php">
+    <entry file="file://$PROJECT_DIR$/userCP/usercp.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="190" column="5" lean-forward="true" selection-start-line="190" selection-start-column="5" selection-end-line="190" selection-end-column="5" />
+        <state relative-caret-position="528">
+          <caret line="154" column="69" selection-start-line="154" selection-start-column="69" selection-end-line="154" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/translations/english.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="90" selection-start-line="90" selection-end-line="90" selection-end-column="47" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cdn/stylesheets/forms.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="21" lean-forward="true" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
         </state>
       </provider>
     </entry>
